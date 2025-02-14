@@ -1,20 +1,29 @@
-.hero{
+.hero__container{
     background-color: red;
     display: flex;
-    justify-content: space-evenly;
     align-items: center;
-    /* margin-bottom: 20px; */
     padding-bottom: 10px;
 }
 
 .hero__logo{
     display: flex;
     align-items: center;
+    margin-left: 100px
+}
+
+.hero__main{
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+    margin-left: 30px;
+    margin-right: 100px;
 }
 
 .hero__nav{
-    /* display: flex;  
-    justify-content: space-between; */
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex: 1;
 }
 
 .hero__navLinks{
@@ -25,27 +34,33 @@
 
 .hero__navLinks li{
     list-style-type: none;
-    margin: 10px;  
+    margin: 10px;
 }
 
-.hero__search{
+.hero__searchTheme{
+    display: flex;
+    align-items: center;
+}
+
+.hero__searchTheme_search{
     display: flex;
     align-items: center;
     border: 3px solid transparent;
     background-color: white;
     border-radius: 5px;
+    margin-right: 50px;
 }
 
-.hero__search input{
-    /* font-size: 15px; */
+.hero__searchTheme_search input{
+    font-size: 15px;
     outline: none;
     border: none;
     height: 36px;
     width: 166px;
 }
 
-.hero__toggleState{
-    
+.hero__searchTheme_theme svg{
+    width: 50px;
+    height: 50px;
 }
-
 

@@ -6,7 +6,8 @@ import {faMagnifyingGlass} from '@fortawesome/free-solid-svg-icons';
 
 export default function Hero(){
     return(
-            <div className={styles.hero}>
+        <div className={styles.hero}>
+            <div className={styles.hero__container}>
                 <div className={styles.hero__logo}>
                     <Image
                         src='/images/Logo.svg'
@@ -16,26 +17,31 @@ export default function Hero(){
                     />
                     <h2>MetaBlog</h2>
                 </div>
+                
+                <div className={styles.hero__main}>
+                    <div className={styles.hero__nav}>
+                        <ul className={styles.hero__navLinks}>
+                            <li>Home</li>
+                            <li>Blog</li>
+                            <li>Single Post</li>
+                            <li>Contact</li>
+                        </ul>
+                    </div>
+                    
+                    <div className={styles.hero__searchTheme}>
+                        <div className={styles.hero__searchTheme_search}>
+                            <input type='search' placeholder='Search...'/>
+                            <FontAwesomeIcon icon={faMagnifyingGlass} />
+                        </div>
 
-                <div className={styles.hero__nav}>
-                    <ul className={styles.hero__navLinks}>
-                        <li>Home</li>
-                        <li>Blog</li>
-                        <li>Single Post</li>
-                        <li>Contact</li>
-                    </ul>
+                        <div className={styles.hero__searchTheme_theme}>
+                            <FontAwesomeIcon icon={faToggleOff} />
+                        </div>
+                    </div>
                 </div>
 
-                <div className={styles.hero__search}>
-                    <input type='search' placeholder='Search...'/>
-                    <FontAwesomeIcon icon={faMagnifyingGlass} />
-                </div>
-
-                <div className={styles.hero__toggleState}>
-                    <FontAwesomeIcon icon={faToggleOff} beat/>
-                </div>
-            
             </div>
+        </div>
 
     )
 }
