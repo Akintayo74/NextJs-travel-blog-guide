@@ -1,0 +1,3 @@
+The next step is to correct your Hero.js structure to align with that 
+of the figma file. Note that the whole structure in the figma file
+is straight.
