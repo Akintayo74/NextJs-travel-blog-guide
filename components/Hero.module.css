@@ -1,14 +1,27 @@
+.hero{
+    line-height: 2;
+    font-size: 1em;
+}
+
 .hero__container{
     background-color: red;
     display: flex;
     align-items: center;
-    padding-bottom: 10px;
+    padding: 10px;
 }
 
 .hero__logo{
     display: flex;
     align-items: center;
     margin-left: 100px
+}
+
+.hero__logo p{
+    font-size: 30px;
+}
+
+.hero__logo p span{
+    font-weight: bold;
 }
 
 .hero__main{
@@ -23,13 +36,14 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-    flex: 1;
+    flex: 2;
 }
 
 .hero__navLinks{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    width: 80%;
 }
 
 .hero__navLinks li{
@@ -40,6 +54,7 @@
 .hero__searchTheme{
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 .hero__searchTheme_search{
@@ -57,6 +72,11 @@
     border: none;
     height: 36px;
     width: 166px;
+}
+
+.hero__searchTheme_theme{
+    display: flex;
+    align-self: center;
 }
 
 .hero__searchTheme_theme svg{

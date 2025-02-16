@@ -11,11 +11,11 @@ export default function Hero(){
                 <div className={styles.hero__logo}>
                     <Image
                         src='/images/Logo.svg'
-                        width={60}
-                        height={60}
+                        width={45}
+                        height={45}
                         alt='logo'
                     />
-                    <h2>MetaBlog</h2>
+                    <p>Meta<span>Blog</span></p>
                 </div>
                 
                 <div className={styles.hero__main}>
