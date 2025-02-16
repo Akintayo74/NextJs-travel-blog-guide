@@ -22,6 +22,7 @@
     top: calc(100% - 200px);
     left: 100px;
     border-radius: 1.5rem;
+    box-shadow: 0px 12px 24px -6px #181A2A1F;
 }
 
 .main__stacked_header{

@@ -8,4 +8,7 @@ like the figma file does. Yours looks like it but doesn't work like it. You need
 to correct that. ✔️
 
 The next thing is to style the technology span. add margin
-bottom.
+bottom. ✔️
+
+Need to work on toggle in hero section and get started
+on the Latest Post section.
