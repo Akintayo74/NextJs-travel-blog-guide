@@ -7,7 +7,7 @@ export default function Main(){
         <div className={styles.main}>
             <div className={styles.main__image}>
                 <Image
-                    src='/images/womanWithLaptop.svg'
+                    src='/images/womanWithLaptop.webp'
                     fill
                     sizes='100vw'
                     style={{objectFit: 'contain'}}
@@ -22,7 +22,7 @@ export default function Main(){
                 <div className={styles.main__author}>
                     <div className={styles.main__author_avatar}>
                         <Image
-                            src='./images/avatar.svg'
+                            src='/images/avatar.webp'
                             width={60}
                             height={60}
                             alt='avatar'
