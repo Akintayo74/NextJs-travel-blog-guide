@@ -4,7 +4,7 @@
 }
 
 .hero__container{
-    background-color: red;
+    /* background-color: red; */
     display: flex;
     align-items: center;
     padding: 10px;
@@ -62,9 +62,11 @@
     display: flex;
     align-items: center;
     border: 3px solid transparent;
-    background-color: white;
+    background-color: #F4F4F5;
     border-radius: 5px;
     margin-right: 50px;
+    border: 3px solid transparent;
+    transition: all 0.3s ease-in-out;
 }
 
 .hero__searchTheme_search input{
@@ -73,6 +75,11 @@
     border: none;
     height: 36px;
     width: 166px;
+    background-color: #F4F4F5;
+}
+
+.hero__searchTheme_search:focus-within{
+    border-color: black;
 }
 
 .hero__searchTheme_theme{

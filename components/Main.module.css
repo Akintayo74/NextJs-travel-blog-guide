@@ -12,9 +12,9 @@
 
 .main__stacked{
     position: relative;
-    background-color: green;
+    background-color: #ffffff;
     padding: 30px;
-    width: 598px;
+    width: 500px;
     /* height: 304px; */
     z-index: 2;
     top: -200px;
@@ -25,6 +25,11 @@
 .main__stacked_header{
     background-color: #4B6BFB;
     font-weight: bold;
+    padding: 5px;
+}
+
+.main__stacked h2{
+    margin-top: 20px;
 }
 
 .main__author{
