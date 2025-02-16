@@ -1,0 +1,26 @@
+.advert{
+    margin-top: 200px;
+    margin-bottom: 200px;
+    display: flex;
+    justify-content: center;
+}
+
+.advert__content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #E8E8EA;
+    width: 750px;
+    height: 100px;
+    border-radius: 10px;
+}
+
+.advert__content span{
+    color: #696A75;
+}
+
+.advert__content_ads{
+    font-weight: bold;
+    font-size: large;
+}

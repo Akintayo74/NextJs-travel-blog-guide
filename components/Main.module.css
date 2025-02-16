@@ -1,3 +1,7 @@
+.main{
+    position: relative;
+}
+
 .main__image{
     position: relative;
     width: 100%;
@@ -10,13 +14,12 @@
 }
 
 .main__stacked{
-    position: relative;
+    position: absolute; /*used to be relative*/
     background-color: #ffffff;
     padding: 30px;
     width: 500px;
-    /* height: 304px; */
     z-index: 2;
-    top: -200px;
+    top: calc(100% - 200px);
     left: 100px;
     border-radius: 1.5rem;
 }
