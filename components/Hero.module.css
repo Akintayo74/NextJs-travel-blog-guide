@@ -1,6 +1,6 @@
 .hero{
     line-height: 2;
-    font-size: 1em;
+    font-size: var(--font-normal);
 }
 
 .hero__container{
@@ -17,7 +17,7 @@
 }
 
 .hero__logo p{
-    font-size: 30px;
+    font-size: var(--font-large);
 }
 
 .hero__logo p span{
@@ -70,7 +70,7 @@
 }
 
 .hero__searchTheme_search input{
-    font-size: 15px;
+    font-size: var(--font-small);
     outline: none;
     border: none;
     height: 36px;

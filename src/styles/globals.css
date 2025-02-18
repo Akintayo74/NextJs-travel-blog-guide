@@ -1,6 +1,10 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --font-large: 30px;
+  --font-mid: 24px; 
+  --font-normal: 16px;
+  --font-small: 14px;
 }
 
 @media (prefers-color-scheme: dark) {

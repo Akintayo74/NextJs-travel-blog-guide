@@ -1,26 +1,48 @@
 .postCard{
     width: 400px;
+    border: 1px solid #E8E8EA;
+    margin: 20px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .postCard__coverImage{
     width: 360px;
     height: 240px;
+    margin: 15px;
 }
 
 .postCard__content{
-    padding: 10px;
+    padding: 15px;
 }
 
 .postCard__filter{
     background-color: #4B6BFB0D;
     color: #4B6BFB;
+    margin-bottom: 20px;
+    padding: 7px;
+    border-radius: 5px;
+    display: block;
+    width: min-content;
+    font-weight: 500;
+    font-size: var(--font-small);
+}
 
+.postCard__title{
+    font-size: var(--font-mid);
+    font-weight: 600;
+    line-height: 28px;
+    color: #181A2A;
 }
 
 .postCard__author{
     display: flex;
     align-items: center;
     gap: 20px;
+    color: #97989F;
+    margin-top: 20px;
 }
 
 .postCard__authorInfo{
@@ -30,6 +52,14 @@
 }
 
 .postCard__authorImage{
-    width: 60px;
-    height: 60px;
+    width: 36px;
+    height: 36px;
+}
+
+.postCard__authorName{
+    font-weight: 500;
+}
+
+.postCard__publishDate{
+    font-weight: 400;
 }

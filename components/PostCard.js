@@ -11,12 +11,12 @@ const PostCard = (props) =>{
             <div className={styles.postCard__content}>
 
                 <div className={styles.postCard__about}>
-                    <h3 className={styles.postCard__filter}>
+                    <span className={styles.postCard__filter}>
                         {props.filter}
-                    </h3>
-                    <h1 className={styles.postCard__title}>
+                    </span>
+                    <span className={styles.postCard__title}>
                         {props.title}
-                    </h1>
+                    </span>
                 </div>
 
                 <div className={styles.postCard__author}>

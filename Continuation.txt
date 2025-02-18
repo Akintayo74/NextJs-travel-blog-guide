@@ -11,4 +11,6 @@ The next thing is to style the technology span. add margin
 bottom. ✔️
 
 Need to work on toggle in hero section and get started
-on the Latest Post section.
+on the Latest Post section. ✔️
+
+Want to work on using variables for font sizes in globals.css ✔️
