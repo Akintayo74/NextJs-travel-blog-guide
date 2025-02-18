@@ -1,0 +1,35 @@
+.postCard{
+    width: 400px;
+}
+
+.postCard__coverImage{
+    width: 360px;
+    height: 240px;
+}
+
+.postCard__content{
+    padding: 10px;
+}
+
+.postCard__filter{
+    background-color: #4B6BFB0D;
+    color: #4B6BFB;
+
+}
+
+.postCard__author{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.postCard__authorInfo{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.postCard__authorImage{
+    width: 60px;
+    height: 60px;
+}

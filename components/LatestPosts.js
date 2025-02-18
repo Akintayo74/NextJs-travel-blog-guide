@@ -1,34 +1,55 @@
-import styles from './Posts.module.css';
+import styles from './Latestposts.module.css';
 import PostCard from './PostCard';
 
 const LatestPosts = () =>{
-    const post =[
+    const posts =[
         {
             id: 1,
             coverImage: '/images/coverImage1.svg',
             title: "The Impact of Technology on the Workplace: How Technology is Changing",
             filter: "Technology",
-            authorImage: ,
+            authorImage: '/images/avatar3.svg',
             authorName: "Tracey Wilson",
             date: "August 20, 2022",
         },
         {
             id: 2,
-            coverImage: ,
+            coverImage: '/images/coverImage2.webp',
             title: "The Impact of Technology on the Workplace: How Technology is Changing",
             filter: "Technology",
-            authorImage: ,
+            authorImage: '/images/avatar.webp',
             authorName: "Jason Francisco",
             date: "August 20, 2022",
         },
         {
             id: 3,
-            coverImage: ,
+            coverImage: '/images/coverImage3.webp',
             title: "The Impact of Technology on the Workplace: How Technology is Changing",
             filter: "Technology",
-            authorImage: ,
+            authorImage: '/images/avatar2.svg',
             authorName: "Elizabeth Slavin",
             date: "August 20, 2022",
         }
     ]
-}
+
+    return (
+        <div className={styles.latestPosts}>
+            <h2>Latest Posts</h2>
+            <div className={styles.postsGrids}>
+                {posts.map(post => (
+                    <PostCard 
+                        key={post.id}
+                        coverImage={post.coverImage}
+                        title={post.title}
+                        filter={post.filter}
+                        authorImage={post.authorImage}
+                        authorName={post.authorName}
+                        date={post.date}
+                    />
+                ))}
+            </div>
+        </div>    
+    );
+};
+
+export default LatestPosts;

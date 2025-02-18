@@ -20,7 +20,7 @@ const PostCard = (props) =>{
                 </div>
 
                 <div className={styles.postCard__author}>
-                    <div>
+                    <div className={styles.postCard__authorInfo}>
                         <img
                             src={props.authorImage}
                             alt={props.authorName}
