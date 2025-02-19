@@ -17,4 +17,8 @@ Want to work on using variables for font sizes in globals.css ✔️
 
 Work on reworking styles on .postCard__container to fit figma file. ✔️
 
-Work on View all posts button and styling
+Work on View all posts button and styling ✔️
+
+Work on footer__info category and on getting their lengths
+and spacing equal among children using gap property to equate that of
+the about and links sections. 
