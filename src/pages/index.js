@@ -3,6 +3,7 @@ import Hero from '../../components/Hero';
 import Main from '../../components/Main';
 import Advert from '../../components/Advert';
 import LatestPosts from '../../components/LatestPosts';
+import Footer from '../../components/Footer';
 
 export default function Home(){
   return(
@@ -12,6 +13,7 @@ export default function Home(){
       <Advert />
       <LatestPosts />
       <Advert />
+      <Footer />
     </div>
   )
 }
