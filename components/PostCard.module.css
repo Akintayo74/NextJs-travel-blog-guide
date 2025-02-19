@@ -1,27 +1,27 @@
 .postCard{
-    width: 400px;
+    width: 100%;
     border: 1px solid #E8E8EA;
-    margin: 20px;
     border-radius: 15px;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-.postCard__coverImage{
-    width: 360px;
-    height: 240px;
+.postCard__container{
     margin: 15px;
 }
 
-.postCard__content{
-    padding: 15px;
+.postCard__coverImage{
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3/2;
+    object-fit: cover;
 }
 
 .postCard__filter{
     background-color: #4B6BFB0D;
     color: #4B6BFB;
-    margin-bottom: 20px;
+    margin: 20px 0px 20px 0px;
     padding: 7px;
     border-radius: 5px;
     display: block;
