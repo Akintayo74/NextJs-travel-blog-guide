@@ -15,4 +15,6 @@ on the Latest Post section. ✔️
 
 Want to work on using variables for font sizes in globals.css ✔️
 
-Work on reworking styles on .postCard__container to fit figma file.
+Work on reworking styles on .postCard__container to fit figma file. ✔️
+
+Work on View all posts button and styling

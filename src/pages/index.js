@@ -11,6 +11,7 @@ export default function Home(){
       <Main />
       <Advert />
       <LatestPosts />
+      <Advert />
     </div>
   )
 }

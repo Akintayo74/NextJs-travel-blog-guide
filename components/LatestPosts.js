@@ -101,8 +101,10 @@ const LatestPosts = () =>{
                         date={post.date}
                     />
                 ))}
+                <div className={styles.latestPosts__btnWrapper}>
+                    <button className={styles.latestPosts__btn}>View All Posts</button>
+                </div>        
             </div>
-            <button>View All Post</button>
         </div>    
     );
 };
