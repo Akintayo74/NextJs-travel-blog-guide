@@ -63,7 +63,7 @@ const Footer = () => {
                 </div>
             </div>
 
-            <hr></hr>
+            <hr className={styles.footer__hr}/>
 
             <div className={styles.footer__copyright}>
                 <div className={styles.footer__logo}>
@@ -76,7 +76,7 @@ const Footer = () => {
                     <p>Meta<span>Blog</span></p>
                 </div>
 
-                <div>
+                <div className={styles.footer__terms}>
                     <a>Terms of Use</a>
                     <a>Privacy Policy</a>
                     <a>Cookie Policy</a>

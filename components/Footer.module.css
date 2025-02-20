@@ -148,3 +148,13 @@
 .footer p span{
     font-weight: bold;
 }
+
+.footer__terms{
+    display: flex;
+    gap: 10px;
+}
+
+.footer__hr{
+    margin: 0 80px;
+    border: 1px solid #DCDDDF;
+}
