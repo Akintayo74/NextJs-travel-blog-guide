@@ -141,6 +141,10 @@
     align-items: center;
 }
 
+.footer__meta{
+    padding-left: 10px;
+}
+
 .footer__logo p{
     font-size: var(--font-mid);
 }
@@ -157,4 +161,13 @@
 .footer__hr{
     margin: 0 80px;
     border: 1px solid #DCDDDF;
+}
+
+.footer__vl{
+    padding: 0px 12px;
+    border-right: 1px solid #DCDDDF;
+}
+
+.footer__vl:last-child{
+    border-right: none;
 }

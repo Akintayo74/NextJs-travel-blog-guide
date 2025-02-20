@@ -69,17 +69,20 @@ const Footer = () => {
                 <div className={styles.footer__logo}>
                     <Image
                         src='/images/Logo.svg'
-                        width={45}
-                        height={45}
+                        width={48}
+                        height={48}
                         alt='logo'
                     />
-                    <p>Meta<span>Blog</span></p>
+                    <div className={styles.footer__meta}>
+                        <p>Meta<span>Blog</span></p>
+                        <span>&copy;JS Template 2023. All Rights Reserved.</span>
+                    </div>
                 </div>
 
                 <div className={styles.footer__terms}>
-                    <a>Terms of Use</a>
-                    <a>Privacy Policy</a>
-                    <a>Cookie Policy</a>
+                    <a className={styles.footer__vl}>Terms of Use</a>
+                    <a className={styles.footer__vl}>Privacy Policy</a>
+                    <a className={styles.footer__vl}>Cookie Policy</a>
                 </div>
             </div>
 
