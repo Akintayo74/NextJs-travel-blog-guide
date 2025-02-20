@@ -66,7 +66,21 @@ const Footer = () => {
             <hr></hr>
 
             <div className={styles.footer__copyright}>
-                <h2>MetaBlog</h2>
+                <div className={styles.footer__logo}>
+                    <Image
+                        src='/images/Logo.svg'
+                        width={45}
+                        height={45}
+                        alt='logo'
+                    />
+                    <p>Meta<span>Blog</span></p>
+                </div>
+
+                <div>
+                    <a>Terms of Use</a>
+                    <a>Privacy Policy</a>
+                    <a>Cookie Policy</a>
+                </div>
             </div>
 
         </div>

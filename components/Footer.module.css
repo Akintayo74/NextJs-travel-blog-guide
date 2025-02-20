@@ -128,3 +128,23 @@
     border-radius: 6px;
     color: #ffffff;
 }
+
+.footer__copyright{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 30px 80px;
+}
+
+.footer__logo{
+    display: flex;
+    align-items: center;
+}
+
+.footer__logo p{
+    font-size: var(--font-mid);
+}
+
+.footer p span{
+    font-weight: bold;
+}
