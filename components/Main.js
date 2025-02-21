@@ -12,6 +12,7 @@ export default function Main(){
                     sizes='100vw'
                     style={{objectFit: 'contain'}}
                     alt='woman with laptop'
+                    priority
                 />
                 
             </div>

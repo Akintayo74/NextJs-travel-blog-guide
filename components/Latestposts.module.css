@@ -1,5 +1,6 @@
 .latestPosts{
     margin: 80px;
+    font-family: var(--font-work-sans);
 }
 
 .latestPostsGrids{

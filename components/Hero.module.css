@@ -1,10 +1,10 @@
 .hero{
     line-height: 2;
     font-size: var(--font-normal);
+    font-family: var(--font-work-sans);
 }
 
 .hero__container{
-    /* background-color: red; */
     display: flex;
     align-items: center;
     padding: 10px;
@@ -13,7 +13,8 @@
 .hero__logo{
     display: flex;
     align-items: center;
-    margin-left: 60px
+    margin-left: 60px;
+    font-family: var(--font-plus-jakarta);
 }
 
 .hero__logo p{
@@ -28,8 +29,6 @@
     display: flex;
     justify-content: space-between;
     flex: 1;
-    /* margin-left: 30px; */
-    /* margin-right: 40px; */
 }
 
 .hero__nav{
@@ -44,11 +43,15 @@
     justify-content: center;
     align-items: center;
     width: 80%;
+    
 }
 
 .hero__navLinks li{
     list-style-type: none;
     margin: 10px;
+    font-weight: 400;
+    font-size: var(--font-normal);
+    color: #3B3C4A;
 }
 
 .hero__searchTheme{

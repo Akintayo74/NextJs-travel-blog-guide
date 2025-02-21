@@ -3,6 +3,7 @@
     margin-bottom: 100px;
     display: flex;
     justify-content: center;
+    font-family: var(--font-work-sans);
 }
 
 .advert__content{

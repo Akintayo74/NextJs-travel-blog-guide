@@ -1,5 +1,6 @@
 .main{
     position: relative;
+    font-family: var(--font-work-sans);
 }
 
 .main__image{
