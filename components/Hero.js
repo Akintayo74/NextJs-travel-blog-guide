@@ -32,7 +32,7 @@ export default function Hero(){
                                 <Link href='/single-post'>Single Post</Link>
                             </li>
                             <li>
-                                <Link href='/about'>Contact</Link>
+                                <Link href='/contact'>Contact</Link>
                             </li>
                         </ul>
                     </div>

@@ -1,14 +1,14 @@
-import Navigation  from "./Navigation";
 import Hero from "./Hero";
+import Footer from "./Footer";
 
 export default function Layout({ children }){
     return(
         <div>
-            <Navigation />
+            <Hero />
             <main>
                 {children}
             </main>
-
+            <Footer />
         </div>
     )
 }
