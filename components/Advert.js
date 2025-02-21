@@ -1,4 +1,4 @@
-import styles from './Advert.module.css';
+import styles from '@/styles/Advert.module.css';
 
 
 export default function Advertisement(){

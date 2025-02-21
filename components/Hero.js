@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import styles from './Hero.module.css';
+import styles from '@/styles/Hero.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faToggleOff} from '@fortawesome/free-solid-svg-icons';
 import {faMagnifyingGlass} from '@fortawesome/free-solid-svg-icons';

@@ -1,4 +1,4 @@
-import styles from './Footer.module.css';
+import styles from '@/styles/Footer.module.css';
 import Image from 'next/image';
 
 const Footer = () => {
@@ -7,12 +7,10 @@ const Footer = () => {
 
             <div className={styles.footer__info}>
                 <div className={styles.footer__aboutSection}>
-                    {/* <div className={styles.footer__about}> */}
-                        <h3>About</h3>
-                        <span className={styles.footer__lorem}>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ut rutrum purus. Etiam lacinia quam at feugiat semper. Mauris imperdiet eros pulvinar massa convallis, vel lacinia nibh pharetra. Vestibulum gravida.</p>
-                        </span>
-                    {/* </div> */}
+                    <h3>About</h3>
+                    <span className={styles.footer__lorem}>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ut rutrum purus. Etiam lacinia quam at feugiat semper. Mauris imperdiet eros pulvinar massa convallis, vel lacinia nibh pharetra. Vestibulum gravida.</p>
+                    </span>
                     <div className={styles.footer__contact}>
                         <p><span>Email: </span>info@jstemplate.net</p>
                         <p><span>Phone: </span>880 123 456 789</p>
@@ -56,6 +54,7 @@ const Footer = () => {
                                 src='/images/mail.svg'
                                 width={20}
                                 height={20}
+                                alt='A mail svg image'
                             />
                         </div>
                         <button>Subscribe</button>

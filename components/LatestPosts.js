@@ -1,4 +1,4 @@
-import styles from './Latestposts.module.css';
+import styles from '@/styles/Latestposts.module.css';
 import PostCard from './PostCard';
 
 const LatestPosts = () =>{
