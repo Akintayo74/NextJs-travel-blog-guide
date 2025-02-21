@@ -3,6 +3,7 @@ import styles from '@/styles/Hero.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faToggleOff} from '@fortawesome/free-solid-svg-icons';
 import {faMagnifyingGlass} from '@fortawesome/free-solid-svg-icons';
+import Link from 'next/link';
 
 export default function Hero(){
     return(
@@ -21,10 +22,18 @@ export default function Hero(){
                 <div className={styles.hero__main}>
                     <div className={styles.hero__nav}>
                         <ul className={styles.hero__navLinks}>
-                            <li>Home</li>
-                            <li>Blog</li>
-                            <li>Single Post</li>
-                            <li>Contact</li>
+                            <li>
+                                <Link href='/'>Home</Link>
+                            </li>
+                            <li>
+                                <Link href='/blog'>Blog</Link>
+                            </li>
+                            <li>
+                                <Link href='/single-post'>Single Post</Link>
+                            </li>
+                            <li>
+                                <Link href='/about'>Contact</Link>
+                            </li>
                         </ul>
                     </div>
                     

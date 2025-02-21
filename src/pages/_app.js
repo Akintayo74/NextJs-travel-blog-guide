@@ -1,6 +1,7 @@
 import "@/styles/globals.css";
 import { Work_Sans, Plus_Jakarta_Sans } from 'next/font/google';
 import Head from 'next/head';
+import Layout from '../../components/Layout';
 
 const workSans = Work_Sans({
   subsets: ['latin'],
@@ -22,7 +23,9 @@ export default function App({ Component, pageProps }) {
         <meta name='' content=''></meta>
         <meta name='' content=''></meta>
       </Head>
-      <Component {...pageProps} />
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
     </div>
   ) 
 }
