@@ -1,7 +1,7 @@
 import styles from '@/styles/Latestposts.module.css';
 import PostCard from './PostCard';
 
-const LatestPosts = () =>{
+const LatestPosts = ({showHeader=true}) =>{
     const posts =[
         {
             id: 1,
@@ -88,7 +88,7 @@ const LatestPosts = () =>{
 
     return (
         <div className={styles.latestPosts}>
-            <h2>Latest Posts</h2>
+            {showHeader && <h2>Latest Posts</h2>}
             <div className={styles.latestPostsGrids}>
                 {posts.map(post => (
                     <PostCard 

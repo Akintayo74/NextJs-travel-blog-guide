@@ -1,0 +1,9 @@
+.MainImage{
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1216/600;
+}
+
+.MainImage img{
+    padding: 40px;
+}
