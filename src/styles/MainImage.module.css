@@ -12,14 +12,15 @@
 .MainImage__text{
     position: absolute;
     top: 60%;
-    left: 20%;
+    left: 10%;
     z-index: 1;
     color: #FFFFFF;
 }
 
 .MainImage__header h2{
-    width: 500px;
+    width: 600px;
     font-weight: 600;
+    font-size: var(--font-large);
 }
 
 .main__stacked_header{
