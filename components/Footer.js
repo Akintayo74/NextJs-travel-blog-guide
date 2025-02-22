@@ -1,7 +1,7 @@
 import styles from '@/styles/Footer.module.css';
 import Image from 'next/image';
 
-const Footer = () => {
+const Footer = ( {isBlueLogo = false} ) => {
     return(
         <div className={styles.footer}>
 
@@ -67,7 +67,7 @@ const Footer = () => {
             <div className={styles.footer__copyright}>
                 <div className={styles.footer__logo}>
                     <Image
-                        src='/images/Logo.svg'
+                        src={isBlueLogo ? '/images/Logo2.svg' : '/images/Logo.svg'}
                         width={48}
                         height={48}
                         alt='logo'

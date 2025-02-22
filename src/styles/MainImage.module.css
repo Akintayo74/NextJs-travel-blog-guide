@@ -2,6 +2,7 @@
     position: relative;
     width: 100%;
     aspect-ratio: 1216/600;
+    font-family: var(--font-work-sans);
 }
 
 .MainImage > img:first-child{
@@ -17,7 +18,8 @@
 }
 
 .MainImage__header h2{
-    width: 400px;
+    width: 500px;
+    font-weight: 600;
 }
 
 .main__stacked_header{
@@ -27,7 +29,7 @@
     padding: 5px;
 }
 
-.main__stacked h2{
+.MainImage__header h2{
     margin-top: 20px;
 }
 

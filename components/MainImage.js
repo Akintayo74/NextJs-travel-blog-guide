@@ -22,11 +22,11 @@ export default function MainImage(){
                     <div className={styles.main__author_avatar}>
                         <Image
                             src='/images/avatarBlank.svg'
-                            width={60}
-                            height={60}
+                            width={36}
+                            height={36}
                             alt='Blank avatar'
                         />
-                        <span>Jason Francisco</span>
+                        <span>Tracey Wilson</span>
                     </div>
                     <span>August 20, 2022</span>
                 </div>
