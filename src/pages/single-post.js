@@ -5,7 +5,6 @@ export default function Blog(){
     return (
         <div>
             <Header />
-            <Advert />
         </div>
     )
 }
