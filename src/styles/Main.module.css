@@ -16,7 +16,7 @@
 
 .main__stacked{
     position: absolute; /*used to be relative*/
-    background-color: #ffffff;
+    background-color: var(--mainStacked-background);
     padding: 30px;
     width: 500px;
     z-index: 2;

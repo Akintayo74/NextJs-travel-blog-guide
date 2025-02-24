@@ -79,7 +79,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    background-color: #ffffff;
+    background-color: var(--newsletter-background);
     padding: 30px;
     border-radius: 12px;
 }
@@ -91,7 +91,7 @@
 
 .footer__newsletterHeading h2{
     font-weight: 600;
-    color: #181A2A;
+    color: var(--newsletterHeading-color);
 }
 
 .footer__newsletterHeading span{
@@ -109,7 +109,7 @@
     justify-content: space-between;
     align-items: center;
     border: 1px solid #DCDDDF;
-    background-color: #ffffff;
+    background-color: var(--newsletterInput-background);
     padding: 12px 16px;
     border-radius: 6px;
 }
@@ -119,6 +119,7 @@
     font-size: var(--font-normal);
     border: none;
     color: #97989F;
+    background-color: var(--newsletterInput-background);
 }
 
 .footer__inputNewsletter button{

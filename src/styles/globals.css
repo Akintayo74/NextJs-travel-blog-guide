@@ -8,6 +8,12 @@
   --footer-background: #E8E8EA;
   --contact-background: #F6F6F7;
   --advert-background: #E8E8EA;
+  --mainStacked-background: #ffffff;
+  --postCardTitle-color: #181A2A;
+  --latestPosts-btn: #ffffff;
+  --newsletter-background: #ffffff;
+  --newsletterInput-background: #ffffff;
+  --newsletterHeading-color: #181A2A;
 }
 
 [data-theme='dark']{
@@ -16,6 +22,12 @@
   --footer-background: #141624;
   --contact-background: #242535;
   --advert-background: #242535;
+  --mainStacked-background: #181A2A;
+  --postCardTitle-color: #FFFFFF;
+  --latestPosts-btn: #181A2A;
+  --newsletter-background: #242535;
+  --newsletterInput-background: #181A2A;
+  --newsletterHeading-color: #FFFFFF;
 }
 
 html,

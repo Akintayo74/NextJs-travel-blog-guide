@@ -34,7 +34,7 @@
     font-size: var(--font-mid);
     font-weight: 600;
     line-height: 28px;
-    color: #181A2A;
+    color: var(--postCardTitle-color);
 }
 
 .postCard__author{
