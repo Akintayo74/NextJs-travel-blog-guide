@@ -1,5 +1,5 @@
 import "@/styles/globals.css";
-import { Work_Sans, Plus_Jakarta_Sans } from 'next/font/google';
+import { Work_Sans, Plus_Jakarta_Sans, Source_Serif_4 } from 'next/font/google';
 import Head from 'next/head';
 import Layout from '../../components/Layout';
 
@@ -15,9 +15,15 @@ const plusJakarta = Plus_Jakarta_Sans({
   variable: '--font-plus-jakarta'
 })
 
+const sourceSerif = Source_Serif_4({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-source-serif'
+})
+
 export default function App({ Component, pageProps }) {
   return(
-    <div className={`${workSans.variable} ${plusJakarta.variable}`}>
+    <div className={`${workSans.variable} ${plusJakarta.variable} ${sourceSerif.variable}`}>
       <Head>
         <title>Travel Blog</title>
         <meta name='' content=''></meta>
