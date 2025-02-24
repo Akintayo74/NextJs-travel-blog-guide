@@ -2,6 +2,7 @@ import "@/styles/globals.css";
 import { Work_Sans, Plus_Jakarta_Sans, Source_Serif_4 } from 'next/font/google';
 import Head from 'next/head';
 import Layout from '../../components/Layout';
+import { ThemeProvider } from "components/ThemeContext";
 
 const workSans = Work_Sans({
   subsets: ['latin'],
@@ -23,15 +24,17 @@ const sourceSerif = Source_Serif_4({
 
 export default function App({ Component, pageProps }) {
   return(
-    <div className={`${workSans.variable} ${plusJakarta.variable} ${sourceSerif.variable}`}>
-      <Head>
-        <title>Travel Blog</title>
-        <meta name='' content=''></meta>
-        <meta name='' content=''></meta>
-      </Head>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
-    </div>
+    <ThemeProvider>
+      <div className={`${workSans.variable} ${plusJakarta.variable} ${sourceSerif.variable}`}>
+        <Head>
+          <title>Travel Blog</title>
+          <meta name='' content=''></meta>
+          <meta name='' content=''></meta>
+        </Head>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </div>
+    </ThemeProvider>
   ) 
 }

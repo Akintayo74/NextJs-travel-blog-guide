@@ -1,11 +1,20 @@
 import Image from 'next/image';
 import styles from '@/styles/Hero.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {faToggleOff} from '@fortawesome/free-solid-svg-icons';
+import {faToggleOff, faToggleOn} from '@fortawesome/free-solid-svg-icons';
 import {faMagnifyingGlass} from '@fortawesome/free-solid-svg-icons';
 import Link from 'next/link';
+import { useContext, useEffect, useState } from 'react';
+import { ThemeContext } from './ThemeContext';
 
 export default function Hero(){
+    const {theme, toggleTheme} = useContext(ThemeContext);
+    const [mounted, setMounted] = useState(false);
+
+    useEffect(() => {
+        setMounted(true);
+    }, [])
+
     return(
         <div className={styles.hero}>
             <div className={styles.hero__container}>
@@ -43,8 +52,18 @@ export default function Hero(){
                             <FontAwesomeIcon icon={faMagnifyingGlass} />
                         </div>
 
-                        <div className={styles.hero__searchTheme_theme}>
-                            <FontAwesomeIcon icon={faToggleOff} />
+                        <div
+                            className={styles.hero__searchTheme_theme}
+                            onClick={toggleTheme}
+                            role='button'
+                            aria-label={`Switch to ${theme === 'light' ? 'light' : 'dark'} mode`}
+                        >
+                            { mounted &&(
+                                <FontAwesomeIcon
+                                    icon={theme==='dark' ? faToggleOn : faToggleOff}
+                                    style={{cursor: 'pointer'}}
+                                />
+                            )}
                         </div>
                     </div>
                 </div>
