@@ -78,7 +78,7 @@
 }
 
 .header__highlight{
-    background-color: #E8E8EA;
+    background-color: var(--headerHighlight-background);
     border-left: 4px solid #E8E8EA;
     padding: 32px;
     border-radius: 12px;

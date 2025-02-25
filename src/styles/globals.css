@@ -14,6 +14,10 @@
   --newsletter-background: #ffffff;
   --newsletterInput-background: #ffffff;
   --newsletterHeading-color: #181A2A;
+  --themeToggle-color: #181A2A;
+  --heroInput-color: #F4F4F5;
+  --heroLinks-color: #3B3C4A;
+  --headerHighlight-background: #E8E8EA;
 }
 
 [data-theme='dark']{
@@ -28,6 +32,10 @@
   --newsletter-background: #242535;
   --newsletterInput-background: #181A2A;
   --newsletterHeading-color: #FFFFFF;
+  --themeToggle-color: #4B6BFB;
+  --heroInput-color: #242535;
+  --heroLinks-color: #FFFFFF;
+  --headerHighlight-background: #242535;
 }
 
 html,

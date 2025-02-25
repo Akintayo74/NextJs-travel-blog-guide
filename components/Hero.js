@@ -15,12 +15,14 @@ export default function Hero(){
         setMounted(true);
     }, [])
 
+    const logoSrc = theme === 'dark' ? '/images/Logo3.svg' : '/images/Logo.svg';
+
     return(
         <div className={styles.hero}>
             <div className={styles.hero__container}>
                 <div className={styles.hero__logo}>
                     <Image
-                        src='/images/Logo.svg'
+                        src={logoSrc}
                         width={45}
                         height={45}
                         alt='logo'
