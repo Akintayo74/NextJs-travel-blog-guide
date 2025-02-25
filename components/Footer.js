@@ -1,7 +1,28 @@
 import styles from '@/styles/Footer.module.css';
 import Image from 'next/image';
+import { useContext, useEffect, useState } from 'react';
+import { ThemeContext } from './ThemeContext';
 
 const Footer = ( {isBlueLogo = false} ) => {
+
+    const { theme } = useContext(ThemeContext);
+    const [mounted, setMounted] = useState(false);
+
+    useEffect(() => {
+        setMounted(true);
+    }, []);
+
+
+    const getLogoSrc = () => {
+        if (mounted && theme === 'dark') {
+            return '/images/Logo3.svg';
+        }
+        
+        return isBlueLogo ? '/images/Logo2.svg' : '/images/Logo.svg';
+    };
+
+    const logoSrc = getLogoSrc();
+
     return(
         <div className={styles.footer}>
 
@@ -67,7 +88,7 @@ const Footer = ( {isBlueLogo = false} ) => {
             <div className={styles.footer__copyright}>
                 <div className={styles.footer__logo}>
                     <Image
-                        src={isBlueLogo ? '/images/Logo2.svg' : '/images/Logo.svg'}
+                        src={logoSrc}
                         width={48}
                         height={48}
                         alt='logo'
