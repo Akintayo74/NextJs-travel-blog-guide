@@ -1,11 +1,14 @@
 import LatestPosts from "components/LatestPosts";
 import ContactCard from "components/ContactCard";
+import ProtectedRoute from "components/ProtectedRoute";
 
 export default function About(){
     return (
-        <div>
-            <ContactCard />
-            <LatestPosts />
-        </div>
+        <ProtectedRoute>
+            <div>
+                <ContactCard />
+                <LatestPosts />
+            </div>
+        </ProtectedRoute>
     )
 }

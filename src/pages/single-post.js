@@ -1,10 +1,12 @@
 import Header from "components/Header";
-import Advert from "components/Advert";
+import ProtectedRoute from "components/ProtectedRoute";
 
 export default function Blog(){
     return (
-        <div>
-            <Header />
-        </div>
+        <ProtectedRoute>
+            <div>
+                <Header />
+            </div>
+        </ProtectedRoute>
     )
 }

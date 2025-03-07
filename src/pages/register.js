@@ -77,7 +77,7 @@ export default function Register() {
                         />
                     </div>
 
-                    <div>
+                    <div className={styles.authFormGroup}>
                         <label htmlFor='confirmPassword'>Confirm Password</label>
                         <input
                             id='confirmPassword'
