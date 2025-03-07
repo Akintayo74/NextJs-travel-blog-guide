@@ -1,12 +1,14 @@
-import { useState } from 'react';
+import {useState} from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
-import { loginUser } from '../../utils/api';
+import { registerUser } from 'utils/api';
 import styles from '@/styles/Auth.module.css';
 
-export default function Login() {
+export default function Register() {
+    const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
     const [error, setError] = useState('');
     const [loading, setLoading] = useState('');
     const router = useRouter();
@@ -14,17 +16,20 @@ export default function Login() {
     const handleSubmit = async(e) => {
         e.preventDefault();
         setError('');
+
+        if (password !== confirmPassword) {
+            setError('Passwords do not match!');
+            return;
+        }
+
         setLoading(true);
 
-        try{
-            const result = await loginUser(email, password);
-            localStorage.setItem('authToken', result.data.token);
-            localStorage.setItem('userData', JSON.stringify(result.data));
-
-            router.push('/index');
+        try {
+            const result = await registerUser(name, email, password);
+            router.push('/login?registered=true');
         } catch(err) {
-            setError(err.message || 'Failed to login. Please try again');
-        } finally {
+            setError(err.message || 'Failed to Register. Please try again.');
+        } finally{
             setLoading(false);
         }
     };
@@ -32,13 +37,25 @@ export default function Login() {
     return(
         <div className={styles.authContainer}>
             <div className={styles.authForm}>
-                <h1>Login To MetaBlog</h1>
+                <h1>Create an Account</h1>
                 {error && <div className={styles.authError}>{error}</div>}
 
                 <form onSubmit={handleSubmit}>
                     <div className={styles.authFormGroup}>
+                        <label htmlFor='name'>Full Name</label>
+                        <input
+                            id='name'
+                            type='text'
+                            value={name}
+                            onChange={(e) => setName(e.target.value)}
+                            required
+                            placeholder='Enter your full name'
+                        />
+                    </div>
+
+                    <div className={styles.authFormGroup}>
                         <label htmlFor='email'>Email</label>
-                        <input 
+                        <input
                             id='email'
                             type='email'
                             value={email}
@@ -56,7 +73,19 @@ export default function Login() {
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                             required
-                            placeholder='Enter your password'
+                            placeholder='Create a password'
+                        />
+                    </div>
+
+                    <div>
+                        <label htmlFor='confirmPassword'>Confirm Password</label>
+                        <input
+                            id='confirmPassword'
+                            type='password'
+                            value={confirmPassword}
+                            onChange={(e) => setConfirmPassword(e.target.value)}
+                            required
+                            placeholder='Confirm your password'
                         />
                     </div>
 
@@ -65,16 +94,14 @@ export default function Login() {
                         disabled={loading}
                         className={styles.authSubmitButton}
                     >
-                        {loading ? 'Logging In...' : 'Login'}
+                        {loading ? 'Creating Account...' : 'Register'}
                     </button>
                 </form>
 
                 <div className={styles.authLinks}>
-                    <p>Don't have an account? <Link href='/register'>Register</Link></p>
+                    <p>Already have an account? <Link href='/login'>Login</Link></p>
                 </div>
             </div>
         </div>
     );
 }
-
-
