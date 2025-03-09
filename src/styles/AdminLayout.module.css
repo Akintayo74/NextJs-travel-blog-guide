@@ -1,0 +1,61 @@
+.adminContainer {
+    display: flex;
+    min-height: 100vh;
+}
+
+.adminSidebar {
+    width: 250px;
+    background-color: #1a1a2e;
+    color: white;
+    padding: 1rem 0;
+}
+
+.adminSidebarHeader {
+    padding: 0 1.5rem 1.5rem;
+    border-bottom: 1px solid #333;
+}
+
+.adminSidebarNav {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+}
+
+.adminLink, .adminActiveLink {
+    padding: 0.75rem 1rem;
+    margin-bottom: 0.5rem;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.adminLink {
+    color: #e2e2e2;
+    background-color: transparent;
+}
+
+.adminActiveLink {
+    color: white;
+    background-color: #16213e;
+}
+
+.adminLink:hover {
+    background-color: #16213e;
+}
+
+.adminLogoutBtn {
+    margin-top: auto;
+    padding: 0.75rem 1rem;
+    background-color: #e94560;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 2rem;
+}
+
+.adminContent {
+    flex: 1;
+    padding: 2rem;
+    background-color: #f5f5f5;
+}
