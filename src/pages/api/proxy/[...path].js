@@ -1,7 +1,7 @@
 // pages/api/proxy/[...path].js
 import { NextApiRequest, NextApiResponse } from 'next';
 
-// The actual backend API URL
+
 const BACKEND_URL = 'https://meta-blog-api-2n32.onrender.com';
 
 export default async function handler(req, res) {
