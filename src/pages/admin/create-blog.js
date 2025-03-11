@@ -49,7 +49,7 @@ export default function CreateBlog() {
                 body: JSON.stringify({
                     title: formData.title,
                     description: formData.description,
-                    author: formData.description,
+                    author: formData.author,
                     image: formData.image
                 })
             });
