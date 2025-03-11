@@ -9,7 +9,7 @@ export default function ManageBlogs() {
     useEffect(() => {
         const fetchBlogs = async() => {
             try{
-                const response = await fetch('https://meta-blog-api-2n32.onrender.com/api/blogs', {
+                const response = await fetch('/api/proxy/blogs', {
                     headers: {
                         'Authorization': `Bearer ${localStorage.getItem('token')}`
                     }

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';
 import AdminLayout from 'components/AdminLayout';
@@ -19,6 +19,24 @@ export default function CreateBlog() {
     const [submitting, setSubmitting] = useState(false);
     const [error, setError] = useState(null);
 
+
+
+
+
+    // FOR TESTING ONLY - Add this in your component
+    useEffect(() => {
+        // Only for testing - remove in production
+        if (!localStorage.getItem('token')) {
+            // Replace with a valid token from your system
+            localStorage.setItem('token', 'djfefpwefbewfewfjekfepf');
+            console.log("Set a test token for debugging purposes");
+        }
+    }, []);
+
+
+
+
+
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData(prev => ({
@@ -34,38 +52,152 @@ export default function CreateBlog() {
         }));
     };
 
+    // const handleSubmit = async(e) => {
+    //     e.preventDefault();
+    //     setSubmitting(true);
+    //     setError(null);
+
+    //     try{
+    //         const response = await fetch('/api/proxy/blogs', {
+    //             method: 'POST',
+    //             headers: {
+    //                 'Content-Type': 'application/json',
+    //                 'Authorization': `Bearer ${localStorage.getItem('token')}`
+    //             },
+    //             body: JSON.stringify({
+    //                 title: formData.title,
+    //                 description: formData.description,
+    //                 author: formData.author,
+    //                 image: formData.image
+    //             })
+    //         });
+
+    //         if(!response.ok){
+    //             throw new Error('Failed to create blog');
+    //         }
+
+    //         router.push('/admin/blogs');
+    //     }catch(err) {
+    //         setError(err.message);
+    //         console.error(err);
+    //     }finally {
+    //         setSubmitting(false);
+    //     }
+    // };
+
+
+
+
+
+    // const handleSubmit = async(e) => {
+    //     e.preventDefault();
+    //     setSubmitting(true);
+    //     setError(null);
+        
+    //     // Debug logging
+    //     console.log("Form data being submitted:", formData);
+    //     console.log("Token available:", localStorage.getItem('token') ? "Yes" : "No");
+    
+    //     try {
+    //         console.log("Starting fetch request...");
+    //         const response = await fetch('/api/proxy/blogs', {
+    //             method: 'POST',
+    //             headers: {
+    //                 'Content-Type': 'application/json',
+    //                 'Authorization': `Bearer ${localStorage.getItem('token')}`
+    //             },
+    //             body: JSON.stringify({
+    //                 title: formData.title,
+    //                 description: formData.description,
+    //                 author: formData.author,
+    //                 image: formData.image
+    //             })
+    //         });
+            
+    //         console.log("Response status:", response.status);
+            
+    //         // Try to get the response body regardless of status
+    //         const responseData = await response.json().catch(e => {
+    //             console.error("Failed to parse response:", e);
+    //             return null;
+    //         });
+            
+    //         console.log("Response data:", responseData);
+    
+    //         if (!response.ok) {
+    //             throw new Error(responseData?.message || 'Failed to create blog');
+    //         }
+    
+    //         router.push('/admin/blogs');
+    //     } catch (err) {
+    //         setError(err.message);
+    //         console.error("Error details:", err);
+    //     } finally {
+    //         setSubmitting(false);
+    //     }
+    // };
+
+
+
     const handleSubmit = async(e) => {
         e.preventDefault();
         setSubmitting(true);
         setError(null);
-
-        try{
-            const response = await fetch('https://meta-blog-api-2n32.onrender.com/api/blogs', {
+        
+        // Check for token first
+        const token = localStorage.getItem('token');
+        console.log("Form data being submitted:", formData);
+        console.log("Token available:", token ? "Yes" : "No");
+    
+        if (!token) {
+            setError("Authentication token is missing. Please log in first.");
+            setSubmitting(false);
+            return;
+        }
+    
+        try {
+            console.log("Starting fetch request...");
+            const response = await fetch('/api/proxy/blogs', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${localStorage.getItem('token')}`
+                    'Authorization': `Bearer ${token}`
                 },
                 body: JSON.stringify({
                     title: formData.title,
                     description: formData.description,
                     author: formData.author,
-                    image: formData.image
+                    image: formData.image || "" // Ensure image has a default value
                 })
             });
-
-            if(!response.ok){
-                throw new Error('Failed to create blog');
+            
+            console.log("Response status:", response.status);
+            
+            // Try to get the response body regardless of status
+            const responseText = await response.text();
+            console.log("Response text:", responseText);
+            
+            let responseData;
+            try {
+                responseData = JSON.parse(responseText);
+                console.log("Parsed response data:", responseData);
+            } catch (e) {
+                console.log("Could not parse response as JSON:", responseText);
             }
-
+    
+            if (!response.ok) {
+                throw new Error(responseData?.message || `Error: ${response.status}`);
+            }
+    
             router.push('/admin/blogs');
-        }catch(err) {
+        } catch (err) {
             setError(err.message);
-            console.error(err);
-        }finally {
+            console.error("Error details:", err);
+        } finally {
             setSubmitting(false);
         }
     };
+
 
     const modules = {
         toolbar: [
@@ -115,7 +247,7 @@ export default function CreateBlog() {
                         name='image'
                         value={formData.image}
                         onChange={handleChange}
-                        required
+                        // required
                     />
                 </div>
 
