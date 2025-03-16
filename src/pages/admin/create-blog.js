@@ -212,7 +212,14 @@ export default function CreateBlog() {
     return (
         <AdminLayout>
             <h1>Create New Blog</h1>
-            {error && <div className={styles.createErrorMessage}></div>}
+            <div id="error-container" style={{ display: error ? 'block' : 'none' }}>
+                {error && (
+                <p style={{ color: 'red' }}>
+                    {error}
+                </p>
+                )}
+            </div>
+            
 
             <form onSubmit={handleSubmit}>
                 <div className={styles.createFormGroup}>
