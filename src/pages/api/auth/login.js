@@ -1,5 +1,4 @@
 import cookie from 'cookie';
-import handler from '../hello';
 
 export default async function handler(req, res) {
     if(req.method !== 'POST') {
@@ -28,7 +27,7 @@ export default async function handler(req, res) {
                 sameSite: 'strict',
                 path: '/',
             }));
-
+            //errror debugging
             return res.status(200).json({
                 success: true,
                 user: {
@@ -41,5 +40,8 @@ export default async function handler(req, res) {
         } else {
             return res.status(401).json({ success: false, message: 'Invalid credentials' });
         }
+    } catch (error) {
+        console.error('Login error: ', error);
+        return res.status(500).json({ success: false, message: 'server error'})
     }
 }

@@ -1,10 +1,13 @@
 import Header from "components/Header";
-import Advert from "components/Advert";
+// import Advert from "components/Advert";
+import AuthMiddleware from "components/AuthMiddleware";
 
 export default function Blog(){
     return (
-        <div>
-            <Header />
-        </div>
+        <AuthMiddleware>
+            <div>
+                <Header />
+            </div>
+        </AuthMiddleware>
     )
 }
