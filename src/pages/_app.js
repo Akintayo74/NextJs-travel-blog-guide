@@ -3,6 +3,7 @@ import { Work_Sans, Plus_Jakarta_Sans, Source_Serif_4 } from 'next/font/google';
 import Head from 'next/head';
 import Layout from '../../components/Layout';
 import { ThemeProvider } from "components/ThemeContext";
+import { useRouter } from 'next/router';
 
 const workSans = Work_Sans({
   subsets: ['latin'],
@@ -23,6 +24,10 @@ const sourceSerif = Source_Serif_4({
 })
 
 export default function App({ Component, pageProps }) {
+  const router = useRouter();
+  const noLayoutRoutes = ['/auth/signup', '/auth/login'];
+  const shouldExcludeLayout = noLayoutRoutes.includes(router.pathname);
+
   return(
     <ThemeProvider>
       <div className={`${workSans.variable} ${plusJakarta.variable} ${sourceSerif.variable}`}>
@@ -31,9 +36,14 @@ export default function App({ Component, pageProps }) {
           <meta name='' content=''></meta>
           <meta name='' content=''></meta>
         </Head>
-        <Layout>
+
+        {shouldExcludeLayout ? (
           <Component {...pageProps} />
-        </Layout>
+        ) : (
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        )}
       </div>
     </ThemeProvider>
   ) 
