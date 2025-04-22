@@ -5,7 +5,7 @@ import styles from '@/styles/SignUpForm.module.css';
 export default function SignUp(){
     return (
         <div className = {styles.signup__container}>
-            <h1>Login, Please</h1>
+            <h1>Sign Up Page!</h1>
         </div>
     )
 }
