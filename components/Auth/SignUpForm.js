@@ -6,6 +6,7 @@ export default function SignUp(){
     return (
         <div className = {styles.signup__container}>
             <h1>Sign Up Page!</h1>
+            
         </div>
     )
 }
