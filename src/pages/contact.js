@@ -1,7 +1,8 @@
 import LatestPosts from "components/LatestPosts";
 import ContactCard from "components/ContactCard";
+import withAuth from "components/withAuth";
 
-export default function About(){
+function About(){
     return (
         <div>
             <ContactCard />
@@ -9,3 +10,5 @@ export default function About(){
         </div>
     )
 }
+
+export default withAuth(About);

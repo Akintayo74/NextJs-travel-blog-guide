@@ -1,27 +1,5 @@
-The next step is to correct your Hero.js structure to align with that 
-of the figma file. Note that the whole structure in the figma file
-is straight.✔️
+Okay. I don't need to protect the normal routes. I need to only protect the writing of blog posts part of the app which doesn't exist yet.
 
+Finish authentication and registering of users. Get a token
 
-The next thing is to ensure that .hero__navLinks is using space around to look 
-like the figma file does. Yours looks like it but doesn't work like it. You need
-to correct that. ✔️
-
-The next thing is to style the technology span. add margin
-bottom. ✔️
-
-Need to work on toggle in hero section and get started
-on the Latest Post section. ✔️
-
-Want to work on using variables for font sizes in globals.css ✔️
-
-Work on reworking styles on .postCard__container to fit figma file. ✔️
-
-Work on View all posts button and styling ✔️
-
-Work on footer__info category and on getting their lengths
-and spacing equal among children using gap property to equate that of
-the about and links sections. ✔️
-
-Working on restructuring footer. Need to move styles that were styling .footer__aboutSection
-container upwards to .footer__infoSection.
+Then work on link to editing of blog posts. Don't access the page unless you are logged in
