@@ -3,6 +3,7 @@ import { Work_Sans, Plus_Jakarta_Sans, Source_Serif_4 } from 'next/font/google';
 import Head from 'next/head';
 import Layout from '../../components/Layout';
 import { ThemeProvider } from "components/ThemeContext";
+import { AuthProvider } from 'context/AuthContext';
 import { useRouter } from 'next/router';
 
 const workSans = Work_Sans({
@@ -29,22 +30,24 @@ export default function App({ Component, pageProps }) {
   const shouldExcludeLayout = noLayoutRoutes.includes(router.pathname);
 
   return(
-    <ThemeProvider>
-      <div className={`${workSans.variable} ${plusJakarta.variable} ${sourceSerif.variable}`}>
-        <Head>
-          <title>Travel Blog</title>
-          <meta name='' content=''></meta>
-          <meta name='' content=''></meta>
-        </Head>
+    <AuthProvider>
+      <ThemeProvider>
+        <div className={`${workSans.variable} ${plusJakarta.variable} ${sourceSerif.variable}`}>
+          <Head>
+            <title>Travel Blog</title>
+            <meta name='' content=''></meta>
+            <meta name='' content=''></meta>
+          </Head>
 
-        {shouldExcludeLayout ? (
-          <Component {...pageProps} />
-        ) : (
-          <Layout>
+          {shouldExcludeLayout ? (
             <Component {...pageProps} />
-          </Layout>
-        )}
-      </div>
-    </ThemeProvider>
+          ) : (
+            <Layout>
+              <Component {...pageProps} />
+            </Layout>
+          )}
+        </div>
+      </ThemeProvider>
+    </AuthProvider>
   ) 
 }
