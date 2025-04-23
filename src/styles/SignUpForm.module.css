@@ -48,6 +48,10 @@
     border-radius: 8px;
 }
 
+.signup__button button:hover{
+    background-color: orange;
+}
+
 .signup__right{
     flex: 1;
     height: 100vh;
