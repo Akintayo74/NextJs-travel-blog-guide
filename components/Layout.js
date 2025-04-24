@@ -1,6 +1,7 @@
 import {useRouter} from 'next/router';
 import Hero from "./Hero";
 import Footer from "./Footer";
+import WriteButton from './WriteButton';
 
 export default function Layout({ children }){
     const router = useRouter();
@@ -9,6 +10,7 @@ export default function Layout({ children }){
     return(
         <div>
             <Hero />
+            <WriteButton />
             <main>
                 {children}
             </main>

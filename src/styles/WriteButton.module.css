@@ -1,0 +1,17 @@
+.write__container {
+    position: fixed;
+    top: 110px; /* adjust based on navbar height */
+    right: 24px;
+    z-index: 1000;
+    background: white;
+    padding: 10px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+  
+  .write__container:hover {
+    background: #e0f2ff;
+  }
+  

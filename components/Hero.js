@@ -3,6 +3,7 @@ import styles from '@/styles/Hero.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faToggleOff, faToggleOn} from '@fortawesome/free-solid-svg-icons';
 import {faMagnifyingGlass} from '@fortawesome/free-solid-svg-icons';
+// import { NotebookPen } from 'lucide-react'
 import Link from 'next/link';
 import { useContext, useEffect, useState } from 'react';
 import { ThemeContext } from './ThemeContext';
@@ -98,6 +99,7 @@ export default function Hero(){
                             )}
                         </div>
                     </div>
+                    {/* <NotebookPen /> */}
                 </div>
 
             </div>
