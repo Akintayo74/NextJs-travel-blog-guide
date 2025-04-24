@@ -6,6 +6,8 @@ import {faMagnifyingGlass} from '@fortawesome/free-solid-svg-icons';
 import Link from 'next/link';
 import { useContext, useEffect, useState } from 'react';
 import { ThemeContext } from './ThemeContext';
+import { useRouter } from 'next/router';
+import { AuthContext } from 'context/AuthContext';
 
 export default function Hero(){
     const {theme, toggleTheme} = useContext(ThemeContext);
@@ -14,6 +16,15 @@ export default function Hero(){
     useEffect(() => {
         setMounted(true);
     }, [])
+
+    const { user, logout } = useContext(AuthContext); // Add this line
+    const router = useRouter(); // Add this line
+    
+    // Add this function
+    const handleLogout = () => {
+        logout();
+        router.push('/');
+    };
 
     const logoSrc = theme === 'dark' ? '/images/Logo3.svg' : '/images/Logo.svg';
 
@@ -45,6 +56,25 @@ export default function Hero(){
                             <li>
                                 <Link href='/contact'>Contact</Link>
                             </li>
+                            {user ? (
+                                <>
+                                    {/* `<li>
+                                        <Link href='/blogs/create'>Write Blog</Link>
+                                    </li>` */}
+                                    <li>
+                                        <a onClick={handleLogout} style={{cursor: 'pointer'}}>Logout</a>
+                                    </li>
+                                </>
+                            ) : (
+                                <>
+                                    <li>
+                                        <Link href='/auth/login'>Login</Link>
+                                    </li>
+                                    <li>
+                                        <Link href='/auth/signup'>Sign Up</Link>
+                                    </li>
+                                </>
+                            )}
                         </ul>
                     </div>
                     
