@@ -3,8 +3,16 @@ import { blogService } from 'services/api';
 import { AuthContext } from 'context/AuthContext';
 import { useRouter } from 'next/router';
 import { EditorContent, useEditor } from '@tiptap/react';
-import { StarterKit } from '@tiptap/starter-kit';
+import StarterKit from '@tiptap/starter-kit';
+import Underline from '@tiptap/extension-underline';
+import Link from '@tiptap/extension-link';
+import Placeholder from '@tiptap/extension-placeholder';
 import styles from '@/styles/CreateBlog.module.css';
+import Heading from '@tiptap/extension-heading';
+import BulletList from '@tiptap/extension-bullet-list';
+import OrderedList from '@tiptap/extension-ordered-list';
+import ListItem from '@tiptap/extension-list-item';
+import History from '@tiptap/extension-history';
 
 const CreateBlog = () => {
   const router = useRouter();
@@ -20,21 +28,55 @@ const CreateBlog = () => {
   const [status, setStatus] = useState('');
   const [loading, setLoading] = useState(false);
 
+  // const editor = useEditor({
+  //   extensions: [
+  //     StarterKit,
+  //     Underline,
+  //     Link,
+  //     Placeholder.configure({
+  //       placeholder: 'Write your amazing blog content here...',
+  //     }),
+  //   ],
+  //   content: blogData.description,
+  //   onUpdate({ editor }) {
+  //     setBlogData(prev => ({
+  //       ...prev,
+  //       description: editor.getHTML(),
+  //     }));
+  //   },
+  //   immediatelyRender: false,
+  // });
   const editor = useEditor({
-    extensions: [StarterKit],
-    content: blogData.description, // Initialize with current description
+    extensions: [
+      StarterKit.configure({
+        history: false, // Disable default history to use the custom one
+      }),
+      Underline,
+      Link,
+      Placeholder.configure({
+        placeholder: 'Write your amazing blog content here...',
+      }),
+      Heading.configure({
+        levels: [1, 2, 3],
+      }),
+      BulletList,
+      OrderedList,
+      ListItem,
+      History,
+    ],
+    content: blogData.description,
     onUpdate({ editor }) {
       setBlogData(prev => ({
         ...prev,
-        description: editor.getHTML(), // Update description with the editor's HTML
+        description: editor.getHTML(),
       }));
     },
   });
 
+
   useEffect(() => {
     setIsClient(true);
-    
-    // Populate user data when available
+
     if (user) {
       setBlogData(prev => ({
         ...prev,
@@ -56,8 +98,7 @@ const CreateBlog = () => {
     e.preventDefault();
     setLoading(true);
     setStatus('');
-    
-    // Add timestamps for submission
+
     const now = new Date().toISOString();
     const submissionData = {
       ...blogData,
@@ -68,12 +109,11 @@ const CreateBlog = () => {
     try {
       const response = await blogService.createBlog(submissionData);
       setStatus('Success! Blog created successfully');
-      
-      // Redirect to the newly created blog or blogs list page
+
       setTimeout(() => {
-        router.push('/blog'); // Or to specific blog page if you have that route
+        router.push('/blog');
       }, 2000);
-      
+
     } catch (error) {
       setStatus(`Error: ${error.message || 'Failed to create blog'}`);
     } finally {
@@ -88,7 +128,7 @@ const CreateBlog = () => {
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>Create New Blog Post</h1>
-      
+
       <form onSubmit={handleSubmit} className={styles.form}>
         <div className={styles.formGroup}>
           <label htmlFor="title">Title</label>
@@ -127,12 +167,12 @@ const CreateBlog = () => {
             placeholder="Enter image URL"
             required
           />
-          
+
           {blogData.image && (
             <div className={styles.imagePreview}>
-              <img 
-                src={blogData.image} 
-                alt="Cover preview" 
+              <img
+                src={blogData.image}
+                alt="Cover preview"
                 onError={(e) => {
                   e.target.onerror = null;
                   e.target.src = "/placeholder-image.jpg";
@@ -143,13 +183,76 @@ const CreateBlog = () => {
         </div>
 
         <div className={styles.formGroup}>
-          <label htmlFor="description">Content</label>
-          <EditorContent editor={editor} />
+          <label>Content</label>
+          
+          {/* Toolbar */}
+          {editor && (
+            // <div className={styles.toolbar}>
+            //   <button
+            //     type="button"
+            //     onClick={() => editor.chain().focus().toggleBold().run()}
+            //     className={editor.isActive('bold') ? styles.activeButton : ''}
+            //   >
+            //     Bold
+            //   </button>
+
+            //   <button
+            //     type="button"
+            //     onClick={() => editor.chain().focus().toggleItalic().run()}
+            //     className={editor.isActive('italic') ? styles.activeButton : ''}
+            //   >
+            //     Italic
+            //   </button>
+
+            //   <button
+            //     type="button"
+            //     onClick={() => editor.chain().focus().toggleUnderline().run()}
+            //     className={editor.isActive('underline') ? styles.activeButton : ''}
+            //   >
+            //     Underline
+            //   </button>
+            // </div>
+            <div className={styles.toolbar}>
+              <button type="button" onClick={() => editor.chain().focus().toggleBold().run()}>
+                Bold
+              </button>
+              <button type="button" onClick={() => editor.chain().focus().toggleItalic().run()}>
+                Italic
+              </button>
+              <button type="button" onClick={() => editor.chain().focus().toggleUnderline().run()}>
+                Underline
+              </button>
+              <button type="button" onClick={() => editor.chain().focus().toggleHeading({ level: 1 }).run()}>
+                H1
+              </button>
+              <button type="button" onClick={() => editor.chain().focus().toggleHeading({ level: 2 }).run()}>
+                H2
+              </button>
+              <button type="button" onClick={() => editor.chain().focus().toggleHeading({ level: 3 }).run()}>
+                H3
+              </button>
+              <button type="button" onClick={() => editor.chain().focus().toggleBulletList().run()}>
+                Bullet List
+              </button>
+              <button type="button" onClick={() => editor.chain().focus().toggleOrderedList().run()}>
+                Ordered List
+              </button>
+              <button type="button" onClick={() => editor.chain().focus().undo().run()}>
+                Undo
+              </button>
+              <button type="button" onClick={() => editor.chain().focus().redo().run()}>
+                Redo
+              </button>
+            </div>
+          )}
+          
+          {/* Editor Content */}
+          <EditorContent editor={editor} className={styles.editorContent} />
         </div>
 
-        <button 
-          type="submit" 
-          disabled={loading} 
+        <button
+          type="submit"
+          disabled={loading}
           className={styles.submitButton}
         >
           {loading ? 'Publishing...' : 'Publish Blog'}

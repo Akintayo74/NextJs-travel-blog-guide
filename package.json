@@ -9,9 +9,27 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@floating-ui/react": "^0.27.8",
     "@fortawesome/fontawesome-svg-core": "^6.7.2",
     "@fortawesome/free-solid-svg-icons": "^6.7.2",
     "@fortawesome/react-fontawesome": "^0.2.2",
+    "@tiptap/extension-bullet-list": "^2.11.7",
+    "@tiptap/extension-heading": "^2.11.7",
+    "@tiptap/extension-highlight": "^2.11.7",
+    "@tiptap/extension-history": "^2.11.7",
+    "@tiptap/extension-image": "^2.11.7",
+    "@tiptap/extension-link": "^2.11.7",
+    "@tiptap/extension-list-item": "^2.11.7",
+    "@tiptap/extension-ordered-list": "^2.11.7",
+    "@tiptap/extension-placeholder": "^2.11.7",
+    "@tiptap/extension-subscript": "^2.11.7",
+    "@tiptap/extension-superscript": "^2.11.7",
+    "@tiptap/extension-task-item": "^2.11.7",
+    "@tiptap/extension-task-list": "^2.11.7",
+    "@tiptap/extension-text-align": "^2.11.7",
+    "@tiptap/extension-typography": "^2.11.7",
+    "@tiptap/extension-underline": "^2.11.7",
+    "@tiptap/pm": "^2.11.7",
     "@tiptap/react": "^2.11.7",
     "@tiptap/starter-kit": "^2.11.7",
     "axios": "^1.8.4",
@@ -25,6 +43,7 @@
     "@svgr/webpack": "^8.1.0",
     "eslint": "^9",
     "eslint-config-next": "15.1.6",
+    "sass": "^1.87.0",
     "svgo": "^3.3.2"
   }
 }
