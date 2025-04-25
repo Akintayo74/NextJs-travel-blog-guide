@@ -41,4 +41,16 @@ export const authService = {
     },
 };
 
+// Add this to your existing api.js file
+export const blogService = {
+    createBlog: async (blogData) => {
+      try {
+        const response = await api.post(`${BASE_URL}/blogs`, blogData);
+        return response.data;
+      } catch (error) {
+        throw error.response?.data || { message: 'Blog creation failed', success: false };
+      }
+    },
+};
+
 export default api;
