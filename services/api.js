@@ -9,8 +9,8 @@ const api = axios.create({
     baseURL: BASE_URL,
 });
 
-//Use axios interceptors to include token with requests passing in config as a parameter.
-axios.interceptors.request.use((config) => {
+//Use api interceptors to include token with requests passing in config as a parameter.
+api.interceptors.request.use((config) => {
     const token = localStorage.getItem('token');
     if (token) {
         config.headers['Authorization'] = `Bearer ${token}`
