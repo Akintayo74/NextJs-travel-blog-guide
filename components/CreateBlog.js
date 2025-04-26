@@ -27,52 +27,6 @@ const CreateBlog = () => {
   });
   const [status, setStatus] = useState('');
   const [loading, setLoading] = useState(false);
-  // const [editor, setEditor] = useState(null);
-
-
-
-  // useEffect(() => {
-  //   if (isClient) {
-  //     const newEditor = useEditor({
-  //       extensions: [
-  //         StarterKit.configure({
-  //           history: false,
-  //         }),
-  //         Underline,
-  //         Link,
-  //         Placeholder.configure({
-  //           placeholder: 'Write your amazing blog content here...',
-  //         }),
-  //         Heading.configure({
-  //           levels: [1, 2, 3],
-  //         }),
-  //         BulletList,
-  //         OrderedList,
-  //         ListItem,
-  //         History,
-  //       ],
-  //       content: blogData.description,
-  //       onUpdate({ editor }) {
-  //         setBlogData(prev => ({
-  //           ...prev,
-  //           description: editor.getHTML(),
-  //         }));
-  //       },
-  //     });
-      
-  //     setEditor(newEditor);
-      
-  //     return () => {
-  //       if (newEditor) {
-  //         newEditor.destroy();
-  //       }
-  //     };
-  //   }
-  // }, [isClient]);
-  
-
-
-
 
   const editor = useEditor({
     extensions: [

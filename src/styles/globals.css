@@ -18,6 +18,8 @@
   --heroInput-color: #F4F4F5;
   --heroLinks-color: #3B3C4A;
   --headerHighlight-background: #E8E8EA;
+  --blog-background: #ffffff;
+  --blog-input-color: #000000;
 }
 
 [data-theme='dark']{
@@ -36,6 +38,8 @@
   --heroInput-color: #242535;
   --heroLinks-color: #FFFFFF;
   --headerHighlight-background: #242535;
+  --blog-background: #7D82B8;
+  --blog-input-color: #ffffff;
 }
 
 html,
