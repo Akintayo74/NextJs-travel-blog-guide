@@ -27,56 +27,87 @@ const CreateBlog = () => {
   });
   const [status, setStatus] = useState('');
   const [loading, setLoading] = useState(false);
+  // const [editor, setEditor] = useState(null);
 
-  // const editor = useEditor({
-  //   extensions: [
-  //     StarterKit,
-  //     Underline,
-  //     Link,
-  //     Placeholder.configure({
-  //       placeholder: 'Write your amazing blog content here...',
-  //     }),
-  //   ],
-  //   content: blogData.description,
-  //   onUpdate({ editor }) {
-  //     setBlogData(prev => ({
-  //       ...prev,
-  //       description: editor.getHTML(),
-  //     }));
-  //   },
-  //   immediatelyRender: false,
-  // });
+
+
+  // useEffect(() => {
+  //   if (isClient) {
+  //     const newEditor = useEditor({
+  //       extensions: [
+  //         StarterKit.configure({
+  //           history: false,
+  //         }),
+  //         Underline,
+  //         Link,
+  //         Placeholder.configure({
+  //           placeholder: 'Write your amazing blog content here...',
+  //         }),
+  //         Heading.configure({
+  //           levels: [1, 2, 3],
+  //         }),
+  //         BulletList,
+  //         OrderedList,
+  //         ListItem,
+  //         History,
+  //       ],
+  //       content: blogData.description,
+  //       onUpdate({ editor }) {
+  //         setBlogData(prev => ({
+  //           ...prev,
+  //           description: editor.getHTML(),
+  //         }));
+  //       },
+  //     });
+      
+  //     setEditor(newEditor);
+      
+  //     return () => {
+  //       if (newEditor) {
+  //         newEditor.destroy();
+  //       }
+  //     };
+  //   }
+  // }, [isClient]);
+  
+
+
+
+
   const editor = useEditor({
     extensions: [
-      StarterKit.configure({
-        history: false, // Disable default history to use the custom one
-      }),
+      StarterKit.configure({ history: false }),
       Underline,
       Link,
       Placeholder.configure({
         placeholder: 'Write your amazing blog content here...',
       }),
-      Heading.configure({
-        levels: [1, 2, 3],
-      }),
+      Heading.configure({ levels: [1, 2, 3] }),
       BulletList,
       OrderedList,
       ListItem,
       History,
     ],
-    content: blogData.description,
+    content: isClient ? blogData.description : '',
     onUpdate({ editor }) {
       setBlogData(prev => ({
         ...prev,
         description: editor.getHTML(),
       }));
     },
+    immediatelyRender: false,
   });
+  
+
+
 
 
   useEffect(() => {
     setIsClient(true);
+  }, []);
 
+  
+  useEffect(() => {
     if (user) {
       setBlogData(prev => ({
         ...prev,
@@ -96,6 +127,11 @@ const CreateBlog = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (!isClient || !editor) {
+      return;
+    }
+
     setLoading(true);
     setStatus('');
 
@@ -186,32 +222,7 @@ const CreateBlog = () => {
           <label>Content</label>
           
           {/* Toolbar */}
-          {editor && (
-            // <div className={styles.toolbar}>
-            //   <button
-            //     type="button"
-            //     onClick={() => editor.chain().focus().toggleBold().run()}
-            //     className={editor.isActive('bold') ? styles.activeButton : ''}
-            //   >
-            //     Bold
-            //   </button>
-
-            //   <button
-            //     type="button"
-            //     onClick={() => editor.chain().focus().toggleItalic().run()}
-            //     className={editor.isActive('italic') ? styles.activeButton : ''}
-            //   >
-            //     Italic
-            //   </button>
-
-            //   <button
-            //     type="button"
-            //     onClick={() => editor.chain().focus().toggleUnderline().run()}
-            //     className={editor.isActive('underline') ? styles.activeButton : ''}
-            //   >
-            //     Underline
-            //   </button>
-            // </div>
+          {isClient && editor && (
             <div className={styles.toolbar}>
               <button type="button" onClick={() => editor.chain().focus().toggleBold().run()}>
                 Bold
@@ -247,7 +258,11 @@ const CreateBlog = () => {
           )}
           
           {/* Editor Content */}
-          <EditorContent editor={editor} className={styles.editorContent} />
+          {isClient ? (
+            <EditorContent editor={editor} className={styles.editorContent} />
+          ) : (
+            <div className={styles.editorPlaceholder}>Loading editor...</div>
+          )}
         </div>
 
         <button
