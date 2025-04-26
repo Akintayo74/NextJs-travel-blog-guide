@@ -20,6 +20,7 @@
   --headerHighlight-background: #E8E8EA;
   --blog-background: #ffffff;
   --blog-input-color: #000000;
+  --blog-editor: #7F9183;
 }
 
 [data-theme='dark']{
@@ -40,6 +41,7 @@
   --headerHighlight-background: #242535;
   --blog-background: #7D82B8;
   --blog-input-color: #ffffff;
+  --blog-editor: #96ADC8;
 }
 
 html,
