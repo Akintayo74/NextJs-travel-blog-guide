@@ -90,18 +90,25 @@
   }
   
   .editorContent {
-    border: 1px solid #cccccc;
-    border-radius: 4px;
+    /* border: 1px solid #cccccc; */
+    border-radius: 8px;
     padding: 1rem;
     min-height: 80px;
     font-size: 1rem;
     line-height: 1.5;
-    background-color: var(--blog-editor);
+    color: red;
+    /* background-color: silver; */
+    background-color: var(--blog-textEditorWrapper-color);
+    
     color: var(--blog-input-color);
   }
 
   .editorContent > div{
-    background-color: #F1AB86;
+    padding: 10px;
+    border-radius: 10px;
+    /* background-color: #F1AB86; */
+    background-color: var(--heroInput-color);
+    color: #E1E1E1;
   }
   
   .submitButton {
@@ -135,5 +142,10 @@
     text-align: center;
     font-size: 1.2rem;
     color: #555555;
+  }
+
+  .tiptap_editor img{
+    border-radius: 10px;
+    padding: 20px;
   }
   
