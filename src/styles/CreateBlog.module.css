@@ -68,7 +68,7 @@
   
   .toolbar button {
     padding: 0.5rem 1rem;
-    background-color: #f0f0f0;
+    background-color: var(--blog-textEditorWrapper-color);
     border: 1px solid #cccccc;
     border-radius: 4px;
     cursor: pointer;
@@ -97,18 +97,15 @@
     font-size: 1rem;
     line-height: 1.5;
     color: red;
-    /* background-color: silver; */
     background-color: var(--blog-textEditorWrapper-color);
-    
     color: var(--blog-input-color);
   }
 
   .editorContent > div{
     padding: 10px;
     border-radius: 10px;
-    /* background-color: #F1AB86; */
     background-color: var(--heroInput-color);
-    color: #E1E1E1;
+    color: var(--blog-textEditor-textColor);
   }
   
   .submitButton {
@@ -148,4 +145,4 @@
     border-radius: 10px;
     padding: 20px;
   }
-  
+

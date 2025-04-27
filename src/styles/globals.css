@@ -22,6 +22,7 @@
   --blog-input-color: #000000;
   --blog-editor: #7F9183;
   --blog-textEditorWrapper-color: silver;
+  --blog-textEditor-textColor: #000000;
 }
 
 [data-theme='dark']{
@@ -41,9 +42,10 @@
   --heroLinks-color: #FFFFFF;
   --headerHighlight-background: #242535;
   --blog-background: #7D82B8;
-  --blog-input-color: #ffffff;
+  --blog-input-color: #E1E1E1;
   --blog-editor: #96ADC8;
   --blog-textEditorWrapper-color: #495867;
+  --blog-textEditor-textColor: #E1E1E1;
 }
 
 html,
