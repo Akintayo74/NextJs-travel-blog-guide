@@ -4,6 +4,7 @@
     padding: 0;
     margin: 0;
     overflow: hidden;
+    font-family: var(--font-plus-jakarta);
 }
 
 .login__wrapper{
@@ -46,6 +47,19 @@
     background-color: red;
     border: none;
     border-radius: 8px;
+}
+
+.login__signupLink{
+    margin-top: 50px;
+    font-size: var(--font-normal);
+}
+
+.login__signupLink a{
+    color: red;
+}
+
+.login__signupLink a:hover{
+    text-decoration: underline;
 }
 
 .login__right{

@@ -11,7 +11,7 @@ export default function WriteButton(){
 
     return (
         <div className={styles.write__container} onClick={handleClick}>
-            <NotebookPen size={24}/>
+            <NotebookPen size={24} className={styles.icon} />
         </div>
     )
 }

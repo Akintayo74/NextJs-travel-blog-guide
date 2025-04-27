@@ -14,4 +14,8 @@
   .write__container:hover {
     background: #e0f2ff;
   }
+
+  .icon{
+    stroke: black;
+  }
   
