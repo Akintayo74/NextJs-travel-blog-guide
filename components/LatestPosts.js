@@ -1,104 +1,37 @@
+import { useState, useEffect } from 'react';
 import styles from '@/styles/Latestposts.module.css';
 import PostCard from './PostCard';
+import api from 'services/api';
 
 const LatestPosts = ({showHeader=true}) =>{
-    const posts =[
-        {
-            id: 1,
-            coverImage: '/images/coverImage1.svg',
-            title: "The Impact of Technology on the Workplace: How Technology is Changing",
-            filter: "Technology",
-            authorImage: '/images/avatar3.svg',
-            authorName: "Tracey Wilson",
-            date: "August 20, 2022",
-        },
-        {
-            id: 2,
-            coverImage: '/images/coverImage2.webp',
-            title: "The Impact of Technology on the Workplace: How Technology is Changing",
-            filter: "Technology",
-            authorImage: '/images/avatar.webp',
-            authorName: "Jason Francisco",
-            date: "August 20, 2022",
-        },
-        {
-            id: 3,
-            coverImage: '/images/coverImage3.webp',
-            title: "The Impact of Technology on the Workplace: How Technology is Changing",
-            filter: "Technology",
-            authorImage: '/images/avatar2.svg',
-            authorName: "Elizabeth Slavin",
-            date: "August 20, 2022",
-        },
-        {
-            id: 2,
-            coverImage: '/images/coverImage2.webp',
-            title: "The Impact of Technology on the Workplace: How Technology is Changing",
-            filter: "Technology",
-            authorImage: '/images/avatar.webp',
-            authorName: "Jason Francisco",
-            date: "August 20, 2022",
-        },
-        {
-            id: 3,
-            coverImage: '/images/coverImage3.webp',
-            title: "The Impact of Technology on the Workplace: How Technology is Changing",
-            filter: "Technology",
-            authorImage: '/images/avatar2.svg',
-            authorName: "Elizabeth Slavin",
-            date: "August 20, 2022",
-        },
-        {
-            id: 1,
-            coverImage: '/images/coverImage1.svg',
-            title: "The Impact of Technology on the Workplace: How Technology is Changing",
-            filter: "Technology",
-            authorImage: '/images/avatar3.svg',
-            authorName: "Tracey Wilson",
-            date: "August 20, 2022",
-        },
-        {
-            id: 3,
-            coverImage: '/images/coverImage3.webp',
-            title: "The Impact of Technology on the Workplace: How Technology is Changing",
-            filter: "Technology",
-            authorImage: '/images/avatar2.svg',
-            authorName: "Elizabeth Slavin",
-            date: "August 20, 2022",
-        },
-        {
-            id: 1,
-            coverImage: '/images/coverImage1.svg',
-            title: "The Impact of Technology on the Workplace: How Technology is Changing",
-            filter: "Technology",
-            authorImage: '/images/avatar3.svg',
-            authorName: "Tracey Wilson",
-            date: "August 20, 2022",
-        },
-        {
-            id: 2,
-            coverImage: '/images/coverImage2.webp',
-            title: "The Impact of Technology on the Workplace: How Technology is Changing",
-            filter: "Technology",
-            authorImage: '/images/avatar.webp',
-            authorName: "Jason Francisco",
-            date: "August 20, 2022",
-        },
-    ]
+    const [posts, setPosts] = useState([]);
 
+    useEffect(() => {
+        const fetchPosts = async () => {
+            try {
+                const response = await api.get('/blogs');
+                console.log(response.data.data)
+                setPosts(response.data.data);
+            } catch (error) {
+                console.error('Error fetching posts:', error);
+            }
+        };
+        fetchPosts();
+    }, []);
+ 
     return (
         <div className={styles.latestPosts}>
             {showHeader && <h2>Latest Posts</h2>}
             <div className={styles.latestPostsGrids}>
                 {posts.map(post => (
                     <PostCard 
-                        key={post.id}
-                        coverImage={post.coverImage}
+                        key={post.ID}
+                        coverImage={post.image}
                         title={post.title}
-                        filter={post.filter}
-                        authorImage={post.authorImage}
-                        authorName={post.authorName}
-                        date={post.date}
+                        filter={"General"}
+                        // authorImage={post.authorImage}
+                        authorName={post.author}
+                        // date={post.date}
                     />
                 ))}
                 <div className={styles.latestPosts__btnWrapper}>
