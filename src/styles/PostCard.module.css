@@ -35,6 +35,14 @@
     font-weight: 600;
     line-height: 28px;
     color: var(--postCardTitle-color);
+    
+    display: -webkit-box;
+    /* line-clamp: none; */
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+
+    min-height: 50px;
 }
 
 .postCard__author{

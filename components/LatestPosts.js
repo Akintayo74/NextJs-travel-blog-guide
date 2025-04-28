@@ -29,7 +29,7 @@ const LatestPosts = ({showHeader=true}) =>{
                         coverImage={post.image}
                         title={post.title}
                         filter={"General"}
-                        // authorImage={post.authorImage}
+                        authorImage={`https://api.dicebear.com/9.x/lorelei/svg?seed=${post.author}`}
                         authorName={post.author}
                         // date={post.date}
                     />
