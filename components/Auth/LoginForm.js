@@ -78,7 +78,7 @@ export default function Login(){
                 <div className={styles.login__right}>
                     {/* <h1>Everyday Life</h1> */}
                     <Image 
-                        src='/images/thumbnail.jpg'
+                        src='/images/thumbnail_edit.jpg'
                         fill
                         className={styles.login__image}
                         priority
