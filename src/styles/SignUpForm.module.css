@@ -28,17 +28,13 @@
     gap: 20px;
 }
 
-/* .signup__form label{
-    background-color: white;
-} */
-
 .signup__form input{
     padding: 8px 25px;
     border: none;
     border-radius: 5px;
-    background-color: #f0f0f0;
+    background-color: var(--loginInput-background);
     font-size: var(--font-normal);
-    color:black;
+    color: var(--loginInput-color);
 }
 
 .signup__button button{
@@ -58,7 +54,7 @@
 }
 
 .signup__link a{
-    color: #29414D;
+    color: #2A424E;
 }
 
 .signup__link a:hover{

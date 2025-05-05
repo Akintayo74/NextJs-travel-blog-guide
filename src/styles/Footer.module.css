@@ -28,16 +28,8 @@
     padding: 0px 0px 10px 0px;
 }
 
-/* .footer__about{
-    width: 300px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-} */
-
 .footer__links{
     display: flex;
-    /* justify-content: space-around; */
     gap: 30px;
 }
 

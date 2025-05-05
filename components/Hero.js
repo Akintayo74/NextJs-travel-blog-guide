@@ -59,9 +59,6 @@ export default function Hero(){
                             </li>
                             {user ? (
                                 <>
-                                    {/* `<li>
-                                        <Link href='/blogs/create'>Write Blog</Link>
-                                    </li>` */}
                                     <li>
                                         <a onClick={handleLogout} style={{cursor: 'pointer'}}>Logout</a>
                                     </li>

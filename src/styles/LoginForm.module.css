@@ -36,9 +36,9 @@
     padding: 8px 25px;
     border: none;
     border-radius: 5px;
-    background-color: #f0f0f0;
+    background-color: var(--loginInput-background);
     font-size: var(--font-normal);
-    color:black;
+    color: var(--loginInput-color);
 }
 
 .login__button button{
@@ -67,7 +67,6 @@
     height: 100vh;
     position: relative;
     overflow: hidden;
-    border: none;
 }
 
 .login__image{

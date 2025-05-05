@@ -23,6 +23,8 @@
   --blog-editor: #7F9183;
   --blog-textEditorWrapper-color: silver;
   --blog-textEditor-textColor: #000000;
+  --loginInput-background: #f0f0f0;
+  --loginInput-color: #000000;
 }
 
 [data-theme='dark']{
@@ -46,6 +48,8 @@
   --blog-editor: #96ADC8;
   --blog-textEditorWrapper-color: #495867;
   --blog-textEditor-textColor: #E1E1E1;
+  --loginInput-background: #242535;
+  --loginInput-color: #f0f0f0;
 }
 
 html,

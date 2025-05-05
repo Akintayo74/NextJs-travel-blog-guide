@@ -35,15 +35,19 @@
   .formGroup input{
     background-color: var(--heroInput-color);
     color: var(--blog-input-color);
+    border: none;
   }
   
   .formGroup input[type="text"],
   .formGroup input[type="url"] {
     width: 100%;
     padding: 0.75rem;
-    border: 1px solid #cccccc;
     border-radius: 4px;
     font-size: 1rem;
+  }
+
+  .formGroup input:focus{
+    outline: 3px solid #f0f0f0;
   }
   
   .imagePreview {
@@ -99,6 +103,7 @@
     color: red;
     background-color: var(--blog-textEditorWrapper-color);
     color: var(--blog-input-color);
+    outline: none;
   }
 
   .editorContent > div{
@@ -106,6 +111,7 @@
     border-radius: 10px;
     background-color: var(--heroInput-color);
     color: var(--blog-textEditor-textColor);
+    outline: none;
   }
   
   .submitButton {
@@ -125,7 +131,7 @@
   
   .success {
     margin-top: 1rem;
-    color: #28a745;
+    color: var(--loginInput-color);
     font-weight: 600;
   }
   
