@@ -68,9 +68,9 @@ export default function Hero(){
                                     <li>
                                         <Link href='/auth/login'>Login</Link>
                                     </li>
-                                    <li>
+                                    {/* <li>
                                         <Link href='/auth/signup'>Sign Up</Link>
-                                    </li>
+                                    </li> */}
                                 </>
                             )}
                         </ul>
