@@ -16,7 +16,7 @@ export default function Main(){
                 />
                 
             </div>
-            {/* <div className={styles.main__stacked}>
+            <div className={styles.main__stacked}>
                 <div>
                     <span className={styles.main__stacked_header}>Technology</span>
                     <h2>The Impact of Technology on the Workplace: How Technology Is Changing</h2>
@@ -34,7 +34,7 @@ export default function Main(){
                     </div>
                     <span>August 20, 2022</span>
                 </div>
-            </div> */}
+            </div>
         </div>
     )
 }

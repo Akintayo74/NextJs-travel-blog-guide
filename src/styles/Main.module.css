@@ -19,7 +19,7 @@
 }
 
 .main__stacked{
-    position: absolute; /*used to be relative*/
+    position: absolute;
     background-color: var(--mainStacked-background);
     padding: 30px;
     width: 500px;
@@ -61,12 +61,63 @@
     font-size: var(--font-normal);
 }
 
-@media(max-width: 768px) {
+@media(max-width: 668px) {
     .main__image{
         aspect-ratio: 1/1;
     }
     .main__image img{
         padding: 15px;
         border-radius: 15px;
+    }
+
+    /* Make stacked section responsive for mobile */
+    /* .main__stacked {
+        position: absolute;
+        top: 20px;
+        width: 300px;
+        right: 100px;
+        margin: 0; 
+        padding: 30px; 
+    } */
+
+    .main__stacked {
+        position: relative;
+        width: calc(100% - 100px);
+        left: 0;
+        top: -170px; 
+        margin: 0 25px; 
+        padding: 30px;
+        z-index: 2;
+    }
+     
+
+    .main__stacked h2 {
+        font-size: 1.25rem;
+        margin-top: 10px;
+    }
+    
+    /* Adjust author section layout */
+    .main__author {
+        flex-direction: column; 
+        align-items: flex-start; 
+        gap: 10px;
+    }
+    
+    /* Make avatar smaller */
+    .main__author_avatar img {
+        width: 40px !important; /* Force smaller width */
+        height: 40px !important; /* Force smaller height */
+    }
+}
+
+@media(min-width: 760px) and (max-width: 1024px) {
+    .main__stacked{
+        position: relative;
+        width: calc(100% - 300px);
+        left: 70px;
+        top: -150px; 
+        margin: 0 25px; 
+        padding: 30px;
+        z-index: 2;
     }
 }
