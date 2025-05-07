@@ -11,7 +11,11 @@
 }
 
 .main__image img{
+    width: 100%;
+    height: auto;
+    object-fit: contain;
     padding: 40px;
+    border-radius: 10px;
 }
 
 .main__stacked{
@@ -55,4 +59,14 @@
 .main__author_avatar span{
     font-weight: 500;
     font-size: var(--font-normal);
+}
+
+@media(max-width: 768px) {
+    .main__image{
+        aspect-ratio: 1/1;
+    }
+    .main__image img{
+        padding: 15px;
+        border-radius: 15px;
+    }
 }
