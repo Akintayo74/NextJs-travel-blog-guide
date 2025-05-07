@@ -29,8 +29,17 @@
     font-size: var(--font-mid);
 }
 
-@media(max-width: 768px) {
+@media(max-width: 650px) {
+    .advert__content{
+        width: 350px;
+    }
+}
+
+@media(min-width: 760px) and (max-width: 1024px) {
     .advert{
         margin: 10px 0;
+    }
+    .advert__content{
+        width: 600px;
     }
 }
