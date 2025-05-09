@@ -166,7 +166,7 @@
     border-right: none;
 }
 
-/* Mobile View (max-width: 650px) */
+/* Mobile View*/
 @media(max-width: 759px) {
 
     .footer__info{
