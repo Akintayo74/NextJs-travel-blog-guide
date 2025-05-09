@@ -97,3 +97,10 @@
     color: var(--themeToggle-color);
 }
 
+@media(max-width: 759px) {
+
+}
+
+@media(min-width: 760px) and (max-width: 1024px) {
+
+}

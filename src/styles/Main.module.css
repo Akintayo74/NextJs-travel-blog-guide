@@ -61,7 +61,7 @@
     font-size: var(--font-normal);
 }
 
-@media(max-width: 668px) {
+@media(max-width: 759px) {
     .main__image{
         aspect-ratio: 1/1;
     }
@@ -69,16 +69,6 @@
         padding: 15px;
         border-radius: 15px;
     }
-
-    /* Make stacked section responsive for mobile */
-    /* .main__stacked {
-        position: absolute;
-        top: 20px;
-        width: 300px;
-        right: 100px;
-        margin: 0; 
-        padding: 30px; 
-    } */
 
     .main__stacked {
         position: relative;
