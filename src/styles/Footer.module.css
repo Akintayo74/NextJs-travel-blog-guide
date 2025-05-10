@@ -210,6 +210,16 @@
         gap: 20px; 
         text-align: center;
     }
+
+    .footer__logo{
+        align-items: flex-start;
+        /* justify-content: center; */
+    }
+
+    .footer__meta{
+        padding: 0;
+    }
+
     
     .footer__terms{
         justify-content: center; 
