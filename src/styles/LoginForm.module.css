@@ -1,4 +1,4 @@
-.login__container{
+/* .login__container{
     width: 100vw;
     height: 100vh;
     padding: 0;
@@ -69,4 +69,162 @@
     object-fit: cover;
     object-position: center;
     border-radius: 10px;
+}
+
+@media(max-width: 759px) {
+    
+}
+
+@media(min-width: 760px) and (max-width: 1024px) {
+
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.login__container{
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    font-family: var(--font-plus-jakarta);
+}
+
+.login__wrapper{
+    display: flex;
+    min-height: 100vh;
+    width: 100vw;
+}
+
+.login__left{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: 90px;
+    gap: 10px;
+}
+
+.login__form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.login__form input{
+    padding: 8px 25px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--loginInput-background);
+    font-size: var(--font-normal);
+    color: var(--loginInput-color);
+}
+
+.login__button button{
+    padding: 12px 16px;
+    font-size: var(--font-normal);
+    background-color: red;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+}
+
+.login__signupLink{
+    margin-top: 50px;
+    font-size: var(--font-normal);
+}
+
+.login__signupLink a{
+    color: red;
+}
+
+.login__signupLink a:hover{
+    text-decoration: underline;
+}
+
+.login__right{
+    flex: 1;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.login__image{
+    object-fit: cover;
+    object-position: center;
+}
+
+.error_message {
+    color: red;
+    margin-bottom: 15px;
+}
+
+/* Tablet Styles */
+@media(min-width: 760px) and (max-width: 1024px) {
+    .login__left {
+        margin-left: 50px;
+    }
+    
+    .login__right {
+        flex: 0.9;
+    }
+    
+    .login__form {
+        width: 90%;
+    }
+}
+
+/* Mobile Styles */
+@media(max-width: 759px) {
+    .login__wrapper {
+        flex-direction: column-reverse;
+    }
+    
+    .login__left {
+        margin: 0;
+        padding: 20px;
+        align-items: flex-start;
+    }
+    
+    .login__left h1 {
+        margin-top: 20px;
+        margin-bottom: 10px;
+        font-size: 1.5rem;
+    }
+    
+    .login__leftForm {
+        width: 100%;
+    }
+    
+    .login__form {
+        width: 100%;
+    }
+    
+    .login__form input,
+    .login__button button {
+        /* width: 100%; */
+        box-sizing: border-box;
+    }
+    
+    .login__right {
+        height: 30vh;
+        flex: none;
+    }
+    
+    .login__signupLink {
+        margin-top: 30px;
+    }
 }
