@@ -3,3 +3,6 @@ Okay. I don't need to protect the normal routes. I need to only protect the writ
 Finish authentication and registering of users. Get a token
 
 Then work on link to editing of blog posts. Don't access the page unless you are logged in
+
+I have 2 main problems to fix: -the space below the Header component in responsive design
+                                - the advert component sizing 

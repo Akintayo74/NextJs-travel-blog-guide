@@ -71,32 +71,30 @@
     }
 
     .main__stacked {
-        position: relative;
-        width: calc(100% - 100px);
+        /* position: relative; */
+        width: calc(100% - 50px);
         left: 0;
-        top: -170px; 
+        top: 180px; 
         margin: 0 25px; 
-        padding: 30px;
+        padding: 20px;
         z-index: 2;
     }
      
 
     .main__stacked h2 {
-        font-size: 1.25rem;
+        font-size: 1rem;
         margin-top: 10px;
     }
     
-    /* Adjust author section layout */
     .main__author {
         flex-direction: column; 
         align-items: flex-start; 
         gap: 10px;
     }
     
-    /* Make avatar smaller */
     .main__author_avatar img {
-        width: 40px !important; /* Force smaller width */
-        height: 40px !important; /* Force smaller height */
+        width: 40px !important; 
+        height: 40px !important;
     }
 }
 
