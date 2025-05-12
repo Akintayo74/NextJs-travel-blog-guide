@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     background-color: var(--footer-background);
-    font-family: var(--font-plus-jakarta);
+    font-family: var(--font-plus-jakarta), sans-serif;
 }
 
 
@@ -74,6 +74,7 @@
     background-color: var(--newsletter-background);
     padding: 30px;
     border-radius: 12px;
+    font-family: var(--font-work-sans), sans-serif;
 }
 
 .footer__newsletterHeading{
