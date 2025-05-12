@@ -178,6 +178,10 @@
     .hero__logo {
         margin-left: 10px;
     }
+
+    .hero__container{
+        margin-bottom: 20px;
+    }
     
     .hero__logo p {
         font-size: calc(var(--font-large) - 4px);
