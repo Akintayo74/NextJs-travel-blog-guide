@@ -1,4 +1,4 @@
-.contact{
+/* .contact{
     margin: 0 auto;
     font-family: var(--font-work-sans);
 }
@@ -50,4 +50,164 @@
 
 .contact__icons > img{
     cursor: pointer;
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ContactCard.module.css */
+
+.contact{
+    margin: 0 auto; /* Center the component */
+    font-family: var(--font-work-sans); /* Use the defined font */
+}
+
+.contact__container{
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Default gap between elements */
+    background-color: var(--contact-background); /* Use variable for background */
+    border-radius: 10px; /* Rounded corners */
+    /* --- Desktop Styles (Default) --- */
+    padding: 48px; /* Generous padding for desktop */
+    margin: 30px 80px; /* Top/bottom and left/right margin for desktop */
+}
+
+.contact__author{
+    display: flex;
+    align-items: center; /* Vertically align items in the author section */
+    justify-content: center; /* Center author section content */
+    gap: 10px; /* Gap between avatar and text */
+}
+
+.contact__authorText{
+    display: flex;
+    flex-direction: column; /* Stack name and title vertically */
+}
+
+.contact__authorText > h4{
+    font-size: 20px; /* Author name font size */
+    font-weight: 500;
+    margin: 0 0 2px 0; /* Adjust spacing around the name */
+}
+
+.contact__authorText > span{
+    font-size: 14px; /* Author title font size */
+    margin: 0; /* Remove default margins */
+}
+
+.contact__container p{
+    margin: 0 auto; /* Center the paragraph text block */
+    width: 100%; /* Allow paragraph to take full width within padding */
+    max-width: 668px; /* Limit max width on larger screens */
+    text-align: center; /* Center align paragraph text */
+    font-size: 18px; /* Paragraph font size */
+    line-height: 1.6; /* Improve readability */
+    /* Help prevent long words from breaking layout */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.contact__icons{
+    display: flex;
+    gap: 20px; /* Gap between social icons */
+    justify-content: center; /* Center the icons */
+}
+
+/* Style the links directly for better control and interaction */
+.contact__icons a {
+    display: inline-block; /* Treat links as blocks for spacing */
+    line-height: 0; /* Prevent extra space below Next/Image spans */
+    /* Optional: Add a smooth transition for hover effects */
+    /* transition: transform 0.2s ease; */
+}
+
+/* Optional: Add a subtle hover effect to icons */
+.contact__icons a:hover {
+    transform: scale(1.1);
+}
+
+/* --- Tablet Styles --- */
+/* Applied when screen width is between 760px and 1024px */
+@media (min-width: 760px) and (max-width: 1024px) {
+    .contact__container {
+        padding: 32px 40px; /* Reduced padding for tablet */
+        margin: 25px 40px; /* Reduced margin for tablet */
+        gap: 18px; /* Slightly reduced gap */
+    }
+
+    .contact__authorText > h4 {
+        font-size: 19px; /* Slightly smaller font size */
+    }
+
+    .contact__authorText > span {
+        font-size: 13px; /* Slightly smaller font size */
+    }
+
+    .contact__container p {
+        font-size: 17px; /* Slightly smaller font size */
+        max-width: 90%; /* Allow paragraph to use more relative width */
+    }
+
+     .contact__icons {
+        gap: 18px; /* Slightly reduced gap */
+    }
+}
+
+
+/* --- Mobile Styles --- */
+/* Applied when screen width is 759px or less */
+@media (max-width: 759px) {
+    .contact__container {
+        /* Significantly reduce padding/margin to give content space */
+        padding: 24px 16px; /* Less horizontal padding */
+        margin: 20px 15px; /* Less horizontal margin */
+        gap: 15px; /* Reduced gap */
+    }
+
+    /* Optional: Align author info to the start on mobile if preferred */
+    .contact__author {
+        justify-content: flex-start;
+    }
+
+    .contact__authorText > h4 {
+        font-size: 18px; /* Smaller font size for mobile */
+    }
+
+    .contact__authorText > span {
+        font-size: 12px; /* Smaller font size for mobile */
+    }
+
+    .contact__container p {
+        font-size: 16px; /* Smaller font size for mobile */
+        /* Allow paragraph to use full container width */
+        max-width: 100%;
+        /* Left align text for better readability on narrow screens */
+        text-align: left;
+    }
+
+    .contact__icons {
+        gap: 15px; /* Reduced gap between icons */
+        /* Optional: Allow icons to wrap if screen is extremely narrow */
+        flex-wrap: wrap;
+    }
 }
